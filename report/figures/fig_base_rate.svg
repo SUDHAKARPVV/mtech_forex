@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="706.32pt" height="402.48pt" viewBox="0 0 706.32 402.48" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-29T21:40:10.967470</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 402.48 
+L 706.32 402.48 
+L 706.32 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 48.02328 315.7236 
+L 658.29672 315.7236 
+Q 667.9836 315.7236 667.9836 310.29048 
+L 667.9836 191.14992 
+Q 667.9836 185.7168 658.29672 185.7168 
+L 48.02328 185.7168 
+Q 38.3364 185.7168 38.3364 191.14992 
+L 38.3364 310.29048 
+Q 38.3364 315.7236 48.02328 315.7236 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #fff8f0; stroke: #f3e4d2; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 190.90476 78.9948 
+L 228.6144 78.9948 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 228.6144 78.9948 
+L 228.6144 100.835942 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 228.6144 100.835942 
+Q 242.27982 100.835942 254.268189 100.835942 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 249.468189 98.435942 
+L 254.268189 100.835942 
+L 249.468189 103.235942 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 190.90476 139.1472 
+L 228.6144 139.1472 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 228.6144 139.1472 
+L 228.6144 116.917978 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 228.6144 116.917978 
+Q 242.27982 116.917978 254.268189 116.917978 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 249.468189 114.517978 
+L 254.268189 116.917978 
+L 249.468189 119.317978 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 408.85956 100.835942 
+L 450.0288 100.835942 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 450.0288 100.835942 
+L 450.0288 78.9948 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 450.0288 78.9948 
+Q 463.69422 78.9948 475.682589 78.9948 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 470.882589 76.5948 
+L 475.682589 78.9948 
+L 470.882589 81.3948 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 408.85956 116.917978 
+L 450.0288 116.917978 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 450.0288 116.917978 
+L 450.0288 139.1472 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 450.0288 139.1472 
+Q 463.69422 139.1472 475.682589 139.1472 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 470.882589 136.7472 
+L 475.682589 139.1472 
+L 470.882589 141.5472 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #64748b" x="46.63944" y="198.249099" transform="rotate(-0 46.63944 198.249099)">Worked example — the Trend-Gated Committee on gold, where the control changes the conclusion</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 110.988 245.48112 
+Q 110.988 258.4818 110.988 269.805429 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 113.388 265.005429 
+L 110.988 269.805429 
+L 108.588 265.005429 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 185.71536 288.558 
+Q 214.776 288.558 242.159589 288.558 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 237.359589 286.158 
+L 242.159589 288.558 
+L 237.359589 290.958 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 185.71536 288.558 
+L 221.6952 288.558 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 221.6952 288.558 
+L 221.6952 228.4056 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 221.6952 228.4056 
+Q 232.76592 228.4056 242.159589 228.4056 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 237.359589 226.0056 
+L 242.159589 228.4056 
+L 237.359589 230.8056 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 393.29136 288.558 
+L 450.0288 288.558 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 450.0288 288.558 
+L 450.0288 265.940698 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 450.0288 265.940698 
+Q 459.36972 265.940698 467.033589 265.940698 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 462.233589 263.540698 
+L 467.033589 265.940698 
+L 462.233589 268.340698 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 393.29136 228.4056 
+L 450.0288 228.4056 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 450.0288 228.4056 
+L 450.0288 251.410982 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 450.0288 251.410982 
+Q 459.36972 251.410982 467.033589 251.410982 
+" clip-path="url(#p9245aadfa1)" style="fill: none; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 462.233589 249.010982 
+L 467.033589 251.410982 
+L 462.233589 253.810982 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #94a3b8; stroke: #94a3b8; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 55.98036 93.35376 
+L 172.91484 93.35376 
+Q 185.3694 93.35376 185.3694 86.36832 
+L 185.3694 71.62128 
+Q 185.3694 64.63584 172.91484 64.63584 
+L 55.98036 64.63584 
+Q 43.5258 64.63584 43.5258 71.62128 
+L 43.5258 86.36832 
+Q 43.5258 93.35376 55.98036 93.35376 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #1e3a5f"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 55.98036 153.50616 
+L 172.91484 153.50616 
+Q 185.3694 153.50616 185.3694 146.52072 
+L 185.3694 131.77368 
+Q 185.3694 124.78824 172.91484 124.78824 
+L 55.98036 124.78824 
+Q 43.5258 124.78824 43.5258 131.77368 
+L 43.5258 146.52072 
+Q 43.5258 153.50616 55.98036 153.50616 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #b45309"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 273.93516 123.23592 
+L 390.86964 123.23592 
+Q 403.3242 123.23592 403.3242 116.25048 
+L 403.3242 101.50344 
+Q 403.3242 94.518 390.86964 94.518 
+L 273.93516 94.518 
+Q 261.4806 94.518 261.4806 101.50344 
+L 261.4806 116.25048 
+Q 261.4806 123.23592 273.93516 123.23592 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #0f766e"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 495.34956 93.35376 
+L 612.28404 93.35376 
+Q 624.7386 93.35376 624.7386 86.36832 
+L 624.7386 71.62128 
+Q 624.7386 64.63584 612.28404 64.63584 
+L 495.34956 64.63584 
+Q 482.895 64.63584 482.895 71.62128 
+L 482.895 86.36832 
+Q 482.895 93.35376 495.34956 93.35376 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #0e7c86"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 495.34956 153.50616 
+L 612.28404 153.50616 
+Q 624.7386 153.50616 624.7386 146.52072 
+L 624.7386 131.77368 
+Q 624.7386 124.78824 612.28404 124.78824 
+L 495.34956 124.78824 
+Q 482.895 124.78824 482.895 131.77368 
+L 482.895 146.52072 
+Q 482.895 153.50616 495.34956 153.50616 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #b9c6d4"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 54.25056 242.37648 
+L 167.72544 242.37648 
+Q 180.18 242.37648 180.18 235.39104 
+L 180.18 221.42016 
+Q 180.18 214.43472 167.72544 214.43472 
+L 54.25056 214.43472 
+Q 41.796 214.43472 41.796 221.42016 
+L 41.796 235.39104 
+Q 41.796 242.37648 54.25056 242.37648 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #b9c6d4"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 54.25056 302.52888 
+L 167.72544 302.52888 
+Q 180.18 302.52888 180.18 295.54344 
+L 180.18 281.57256 
+Q 180.18 274.58712 167.72544 274.58712 
+L 54.25056 274.58712 
+Q 41.796 274.58712 41.796 281.57256 
+L 41.796 295.54344 
+Q 41.796 302.52888 54.25056 302.52888 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #b45309"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 261.82656 302.52888 
+L 375.30144 302.52888 
+Q 387.756 302.52888 387.756 295.54344 
+L 387.756 281.57256 
+Q 387.756 274.58712 375.30144 274.58712 
+L 261.82656 274.58712 
+Q 249.372 274.58712 249.372 281.57256 
+L 249.372 295.54344 
+Q 249.372 302.52888 261.82656 302.52888 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #0e7c86"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 261.82656 242.37648 
+L 375.30144 242.37648 
+Q 387.756 242.37648 387.756 235.39104 
+L 387.756 221.42016 
+Q 387.756 214.43472 375.30144 214.43472 
+L 261.82656 214.43472 
+Q 249.372 214.43472 249.372 221.42016 
+L 249.372 235.39104 
+Q 249.372 242.37648 261.82656 242.37648 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #b45309"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 486.70056 272.64672 
+L 600.17544 272.64672 
+Q 612.63 272.64672 612.63 265.66128 
+L 612.63 251.6904 
+Q 612.63 244.70496 600.17544 244.70496 
+L 486.70056 244.70496 
+Q 474.246 244.70496 474.246 251.6904 
+L 474.246 265.66128 
+Q 474.246 272.64672 486.70056 272.64672 
+z
+" clip-path="url(#p9245aadfa1)" style="fill: #8fa3b8"/>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #1e3a5f" x="353.16" y="26.779969" transform="rotate(-0 353.16 26.779969)">Section 4.2 — The base-rate control, applied globally and to any selected subset</text>
+   </g>
+   <g id="text_3">
+    <text style="font-style: italic; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #64748b" x="353.16" y="37.72779" transform="rotate(-0 353.16 37.72779)">Accuracy is only evidence of skill when compared against the best fixed rule on the same bars</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="114.4476" y="76.634253" transform="rotate(-0 114.4476 76.634253)">Reported accuracy</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="114.4476" y="87.459915" transform="rotate(-0 114.4476 87.459915)">A on a set of bars S</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="114.4476" y="136.786317" transform="rotate(-0 114.4476 136.786317)">Base rate on S</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="114.4476" y="147.612315" transform="rotate(-0 114.4476 147.612315)">B = best fixed rule on S</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="332.4024" y="106.620335" transform="rotate(-0 332.4024 106.620335)">Edge = A − B</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="332.4024" y="116.634888" transform="rotate(-0 332.4024 116.634888)">the only quantity reported</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="553.8168" y="76.686214" transform="rotate(-0 553.8168 76.686214)">Edge &gt; 0</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="553.8168" y="87.459915" transform="rotate(-0 553.8168 87.459915)">evidence of skill</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 8.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0f172a" x="553.8168" y="136.838614" transform="rotate(-0 553.8168 136.838614)">Edge ≤ 0</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0f172a" x="553.8168" y="147.239901" transform="rotate(-0 553.8168 147.239901)">drift, not skill</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0f172a" x="110.988" y="226.117278" transform="rotate(-0 110.988 226.117278)">All test bars</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0f172a" x="110.988" y="236.008296" transform="rotate(-0 110.988 236.008296)">9,297 origins</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="110.988" y="286.269678" transform="rotate(-0 110.988 286.269678)">Gated subset</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="110.988" y="296.160696" transform="rotate(-0 110.988 296.160696)">1,985 origins · 21.4%</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 8.4px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="318.564" y="286.269678" transform="rotate(-0 318.564 286.269678)">Committee accuracy</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="318.564" y="296.160696" transform="rotate(-0 318.564 296.160696)">0.5637 — looks strong</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="318.564" y="226.013356" transform="rotate(-0 318.564 226.013356)">Base rate on that subset</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #ffffff" x="318.564" y="236.008296" transform="rotate(-0 318.564 236.008296)">0.5697 always-long</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 8.6px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0f172a" x="543.438" y="256.439479" transform="rotate(-0 543.438 256.439479)">True edge  −0.59 pp</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 7.3px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #0f172a" x="543.438" y="266.278536" transform="rotate(-0 543.438 266.278536)">the gain was the subset's own drift</text>
+   </g>
+   <g id="text_24">
+    <text style="font-style: italic; font-size: 8px; font-family: 'DejaVu Sans'; fill: #64748b" transform="translate(66.581875 349.57486)">Selecting bars changes the benchmark. Filtering to trend-quality bars raised the committee's accuracy to 0.5637, but it raised the always-long</text>
+    <text style="font-style: italic; font-size: 8px; font-family: 'DejaVu Sans'; fill: #64748b" transform="translate(70.053125 361.57486)">rule on those same bars to 0.5697 — so the apparent gain was entirely the base rate of the selected subset. Silver −1.74 pp, euro −6.05 pp.</text>
+   </g>
+   <g id="text_25">
+    <text style="font-style: italic; font-size: 7.8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #64748b" x="353.16" y="169.115437" transform="rotate(-0 353.16 169.115437)">S is whatever set of bars the claim is actually made on — the global test set, or the subset a selective rule chose to trade</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p9245aadfa1">
+   <rect x="7.2" y="7.2" width="691.92" height="388.08"/>
+  </clipPath>
+ </defs>
+</svg>

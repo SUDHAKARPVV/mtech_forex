@@ -1,0 +1,102 @@
+{
+  "pair": "EUR/USD",
+  "slug": "EURUSD",
+  "label": "Euro (EUR/USD)",
+  "target": "magnitude",
+  "magnitude_vs_atr": {
+    "model_spearman": 0.2275031111268264,
+    "atr_pct_spearman": 0.08941296061872872,
+    "model_large_move_acc": 0.5692260252852297,
+    "atr_pct_large_move_acc": 0.4886422037208346,
+    "base_rate": 0.496865042655977,
+    "garch_sigma_spearman": 0.1452920342080917,
+    "garch_sigma_large_move_acc": 0.4937814780552986
+  },
+  "seed": 36,
+  "saved_at": "2026-07-27T15:51:21",
+  "interval": "1h",
+  "smoke": false,
+  "epochs": 25,
+  "feature_names": [
+    "ret_open",
+    "ret_high",
+    "ret_low",
+    "ret_close",
+    "rsi",
+    "macd_hist",
+    "bb_width",
+    "volume_z",
+    "atr_pct",
+    "roc_10",
+    "stoch_k",
+    "ema_ratio",
+    "env_dev20",
+    "bb_pctb",
+    "drift_5",
+    "drift_21",
+    "drift_60",
+    "drift_tstat",
+    "rate_z21",
+    "yield_chg5",
+    "dollar_ret5",
+    "cpi_yoy",
+    "cpi_mom",
+    "days_since_cpi",
+    "sent_mean",
+    "sent_std",
+    "sent_min",
+    "sent_max",
+    "sent_decay",
+    "sent_momentum",
+    "sent_vol",
+    "sent_diffusion",
+    "headline_count_z",
+    "sig_buy",
+    "sig_sell",
+    "sig_hold",
+    "sig_none"
+  ],
+  "lookback": 60,
+  "horizon": 10,
+  "n_total": 37,
+  "bars": 65587,
+  "date_start": "2016-01-04 00:00:00",
+  "date_end": "2026-07-16 20:00:00",
+  "split": {
+    "train": 15284,
+    "val": 3279,
+    "test": 9828
+  },
+  "hybrid": {
+    "DirAcc": 0.9961741961741962,
+    "MAE": 0.0009920061565935612,
+    "RMSE": 0.0019563648384064436,
+    "DirAcc_calibrated": NaN
+  },
+  "calibration": {
+    "sign_thresholds": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "always_up_base_rate": NaN,
+    "edge_vs_base_pp": NaN
+  },
+  "wf_expert_diracc": 0.9971916971916972,
+  "garch": {
+    "DirAcc": 0.49741554741554744,
+    "MAE": 0.0015246812777288798
+  },
+  "arima": {
+    "DirAcc": 0.4696886446886447,
+    "MAE": 0.0014531376931932961
+  },
+  "n_params": 4401767
+}

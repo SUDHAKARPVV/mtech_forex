@@ -1,0 +1,244 @@
+[gate] feature panel OK: 65587 bars, test-set sentiment coverage 98.0%
+
+======================================================================
+MAGNITUDE SEED 9
+======================================================================
+[train_pairs] MAGNITUDE-TARGET experiment: y = |cumulative return| per horizon; directional loss zeroed; scoring vs atr_pct.
+
+===== EUR/USD (Euro (EUR/USD)) @ 1h =====
+[train_pairs] train stride 3: train 45,850->15,284, val 9,837->3,279 (test untouched)
+[train_pairs] EURUSD: 65587 bars, train=15284 val=3279 test=9828
+[garch-expert] loaded 28391 walk-forward GARCH forecasts (hash OK)
+[wf-expert] block 1/99: refit on 18560 windows (cutoff idx 55737), predicted 100
+[wf-expert] block 2/99: refit on 18653 windows (cutoff idx 55837), predicted 100
+[wf-expert] block 3/99: refit on 18753 windows (cutoff idx 55937), predicted 100
+[wf-expert] block 4/99: refit on 18853 windows (cutoff idx 56037), predicted 100
+[wf-expert] block 5/99: refit on 18953 windows (cutoff idx 56137), predicted 100
+[wf-expert] block 6/99: refit on 19053 windows (cutoff idx 56237), predicted 100
+[wf-expert] block 7/99: refit on 19153 windows (cutoff idx 56337), predicted 100
+[wf-expert] block 8/99: refit on 19253 windows (cutoff idx 56437), predicted 100
+[wf-expert] block 9/99: refit on 19353 windows (cutoff idx 56537), predicted 100
+[wf-expert] block 10/99: refit on 19453 windows (cutoff idx 56637), predicted 100
+[wf-expert] block 11/99: refit on 19553 windows (cutoff idx 56737), predicted 100
+[wf-expert] block 12/99: refit on 19653 windows (cutoff idx 56837), predicted 100
+[wf-expert] block 13/99: refit on 19753 windows (cutoff idx 56937), predicted 100
+[wf-expert] block 14/99: refit on 19853 windows (cutoff idx 57037), predicted 100
+[wf-expert] block 15/99: refit on 19953 windows (cutoff idx 57137), predicted 100
+[wf-expert] block 16/99: refit on 20053 windows (cutoff idx 57237), predicted 100
+[wf-expert] block 17/99: refit on 20153 windows (cutoff idx 57337), predicted 100
+[wf-expert] block 18/99: refit on 20253 windows (cutoff idx 57437), predicted 100
+[wf-expert] block 19/99: refit on 20353 windows (cutoff idx 57537), predicted 100
+[wf-expert] block 20/99: refit on 20453 windows (cutoff idx 57637), predicted 100
+[wf-expert] block 21/99: refit on 20553 windows (cutoff idx 57737), predicted 100
+[wf-expert] block 22/99: refit on 20653 windows (cutoff idx 57837), predicted 100
+[wf-expert] block 23/99: refit on 20753 windows (cutoff idx 57937), predicted 100
+[wf-expert] block 24/99: refit on 20853 windows (cutoff idx 58037), predicted 100
+[wf-expert] block 25/99: refit on 20953 windows (cutoff idx 58137), predicted 100
+[wf-expert] block 26/99: refit on 21053 windows (cutoff idx 58237), predicted 100
+[wf-expert] block 27/99: refit on 21153 windows (cutoff idx 58337), predicted 100
+[wf-expert] block 28/99: refit on 21253 windows (cutoff idx 58437), predicted 100
+[wf-expert] block 29/99: refit on 21353 windows (cutoff idx 58537), predicted 100
+[wf-expert] block 30/99: refit on 21453 windows (cutoff idx 58637), predicted 100
+[wf-expert] block 31/99: refit on 21553 windows (cutoff idx 58737), predicted 100
+[wf-expert] block 32/99: refit on 21653 windows (cutoff idx 58837), predicted 100
+[wf-expert] block 33/99: refit on 21753 windows (cutoff idx 58937), predicted 100
+[wf-expert] block 34/99: refit on 21853 windows (cutoff idx 59037), predicted 100
+[wf-expert] block 35/99: refit on 21953 windows (cutoff idx 59137), predicted 100
+[wf-expert] block 36/99: refit on 22053 windows (cutoff idx 59237), predicted 100
+[wf-expert] block 37/99: refit on 22153 windows (cutoff idx 59337), predicted 100
+[wf-expert] block 38/99: refit on 22253 windows (cutoff idx 59437), predicted 100
+[wf-expert] block 39/99: refit on 22353 windows (cutoff idx 59537), predicted 100
+[wf-expert] block 40/99: refit on 22453 windows (cutoff idx 59637), predicted 100
+[wf-expert] block 41/99: refit on 22553 windows (cutoff idx 59737), predicted 100
+[wf-expert] block 42/99: refit on 22653 windows (cutoff idx 59837), predicted 100
+[wf-expert] block 43/99: refit on 22753 windows (cutoff idx 59937), predicted 100
+[wf-expert] block 44/99: refit on 22853 windows (cutoff idx 60037), predicted 100
+[wf-expert] block 45/99: refit on 22953 windows (cutoff idx 60137), predicted 100
+[wf-expert] block 46/99: refit on 23053 windows (cutoff idx 60237), predicted 100
+[wf-expert] block 47/99: refit on 23153 windows (cutoff idx 60337), predicted 100
+[wf-expert] block 48/99: refit on 23253 windows (cutoff idx 60437), predicted 100
+[wf-expert] block 49/99: refit on 23353 windows (cutoff idx 60537), predicted 100
+[wf-expert] block 50/99: refit on 23453 windows (cutoff idx 60637), predicted 100
+[wf-expert] block 51/99: refit on 23553 windows (cutoff idx 60737), predicted 100
+[wf-expert] block 52/99: refit on 23653 windows (cutoff idx 60837), predicted 100
+[wf-expert] block 53/99: refit on 23753 windows (cutoff idx 60937), predicted 100
+[wf-expert] block 54/99: refit on 23853 windows (cutoff idx 61037), predicted 100
+[wf-expert] block 55/99: refit on 23953 windows (cutoff idx 61137), predicted 100
+[wf-expert] block 56/99: refit on 24053 windows (cutoff idx 61237), predicted 100
+[wf-expert] block 57/99: refit on 24153 windows (cutoff idx 61337), predicted 100
+[wf-expert] block 58/99: refit on 24253 windows (cutoff idx 61437), predicted 100
+[wf-expert] block 59/99: refit on 24353 windows (cutoff idx 61537), predicted 100
+[wf-expert] block 60/99: refit on 24453 windows (cutoff idx 61637), predicted 100
+[wf-expert] block 61/99: refit on 24553 windows (cutoff idx 61737), predicted 100
+[wf-expert] block 62/99: refit on 24653 windows (cutoff idx 61837), predicted 100
+[wf-expert] block 63/99: refit on 24753 windows (cutoff idx 61937), predicted 100
+[wf-expert] block 64/99: refit on 24853 windows (cutoff idx 62037), predicted 100
+[wf-expert] block 65/99: refit on 24953 windows (cutoff idx 62137), predicted 100
+[wf-expert] block 66/99: refit on 25053 windows (cutoff idx 62237), predicted 100
+[wf-expert] block 67/99: refit on 25153 windows (cutoff idx 62337), predicted 100
+[wf-expert] block 68/99: refit on 25253 windows (cutoff idx 62437), predicted 100
+[wf-expert] block 69/99: refit on 25353 windows (cutoff idx 62537), predicted 100
+[wf-expert] block 70/99: refit on 25453 windows (cutoff idx 62637), predicted 100
+[wf-expert] block 71/99: refit on 25553 windows (cutoff idx 62737), predicted 100
+[wf-expert] block 72/99: refit on 25653 windows (cutoff idx 62837), predicted 100
+[wf-expert] block 73/99: refit on 25753 windows (cutoff idx 62937), predicted 100
+[wf-expert] block 74/99: refit on 25853 windows (cutoff idx 63037), predicted 100
+[wf-expert] block 75/99: refit on 25953 windows (cutoff idx 63137), predicted 100
+[wf-expert] block 76/99: refit on 26053 windows (cutoff idx 63237), predicted 100
+[wf-expert] block 77/99: refit on 26153 windows (cutoff idx 63337), predicted 100
+[wf-expert] block 78/99: refit on 26253 windows (cutoff idx 63437), predicted 100
+[wf-expert] block 79/99: refit on 26353 windows (cutoff idx 63537), predicted 100
+[wf-expert] block 80/99: refit on 26453 windows (cutoff idx 63637), predicted 100
+[wf-expert] block 81/99: refit on 26553 windows (cutoff idx 63737), predicted 100
+[wf-expert] block 82/99: refit on 26653 windows (cutoff idx 63837), predicted 100
+[wf-expert] block 83/99: refit on 26753 windows (cutoff idx 63937), predicted 100
+[wf-expert] block 84/99: refit on 26853 windows (cutoff idx 64037), predicted 100
+[wf-expert] block 85/99: refit on 26953 windows (cutoff idx 64137), predicted 100
+[wf-expert] block 86/99: refit on 27053 windows (cutoff idx 64237), predicted 100
+[wf-expert] block 87/99: refit on 27153 windows (cutoff idx 64337), predicted 100
+[wf-expert] block 88/99: refit on 27253 windows (cutoff idx 64437), predicted 100
+[wf-expert] block 89/99: refit on 27353 windows (cutoff idx 64537), predicted 100
+[wf-expert] block 90/99: refit on 27453 windows (cutoff idx 64637), predicted 100
+[wf-expert] block 91/99: refit on 27553 windows (cutoff idx 64737), predicted 100
+[wf-expert] block 92/99: refit on 27653 windows (cutoff idx 64837), predicted 100
+[wf-expert] block 93/99: refit on 27753 windows (cutoff idx 64937), predicted 100
+[wf-expert] block 94/99: refit on 27853 windows (cutoff idx 65037), predicted 100
+[wf-expert] block 95/99: refit on 27953 windows (cutoff idx 65137), predicted 100
+[wf-expert] block 96/99: refit on 28053 windows (cutoff idx 65237), predicted 100
+[wf-expert] block 97/99: refit on 28153 windows (cutoff idx 65337), predicted 100
+[wf-expert] block 98/99: refit on 28253 windows (cutoff idx 65437), predicted 100
+[wf-expert] block 99/99: refit on 28353 windows (cutoff idx 65537), predicted 28
+[train_pairs] device=cpu | batch_size=32
+C:\Sudhakar\Github\Forex_Price_Prediction\models\transformer_block.py:52: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+[two-stage] Stage 1: quant-only, text bypassed, 15 epochs, full history (train=15284)
+epoch 01/15 | train_loss=-1.429180 | val_loss=-1.620327 | val_dir_acc=0.9964 | 271.3s
+epoch 02/15 | train_loss=-1.775136 | val_loss=-2.038876 | val_dir_acc=0.9963 | 273.4s
+epoch 03/15 | train_loss=-1.913657 | val_loss=-2.198638 | val_dir_acc=0.9962 | 286.4s
+epoch 04/15 | train_loss=-2.005025 | val_loss=-2.264814 | val_dir_acc=0.9949 | 298.7s
+epoch 05/15 | train_loss=-2.057117 | val_loss=-2.231446 | val_dir_acc=0.9964 | 297.1s
+epoch 06/15 | train_loss=-2.101566 | val_loss=-2.145672 | val_dir_acc=0.9964 | 299.2s
+epoch 07/15 | train_loss=-2.107557 | val_loss=-2.255707 | val_dir_acc=0.9964 | 294.7s
+epoch 08/15 | train_loss=-2.175318 | val_loss=-2.286645 | val_dir_acc=0.9964 | 303.3s
+epoch 09/15 | train_loss=-2.181134 | val_loss=-2.306018 | val_dir_acc=0.9964 | 302.6s
+epoch 10/15 | train_loss=-2.201129 | val_loss=-2.279371 | val_dir_acc=0.9964 | 305.7s
+epoch 11/15 | train_loss=-2.209268 | val_loss=-2.288815 | val_dir_acc=0.9904 | 304.4s
+epoch 12/15 | train_loss=-2.218244 | val_loss=-2.296160 | val_dir_acc=0.9964 | 305.6s
+epoch 13/15 | train_loss=-2.240320 | val_loss=-2.278313 | val_dir_acc=0.9964 | 302.6s
+epoch 14/15 | train_loss=-2.264066 | val_loss=-2.299875 | val_dir_acc=0.9964 | 321.7s
+epoch 15/15 | train_loss=-2.254373 | val_loss=-2.294219 | val_dir_acc=0.9964 | 331.8s
+[two-stage] Stage 2: text+fusion+decoder fine-tune, 10 epochs, news-dense subset (train=11159); froze 4,150,146 quant params, 251,621 trainable
+epoch 01/10 | train_loss=-2.282599 | val_loss=-2.327212 | val_dir_acc=0.9964 | 215.1s
+epoch 02/10 | train_loss=-2.287039 | val_loss=-2.328538 | val_dir_acc=0.9964 | 205.1s
+epoch 03/10 | train_loss=-2.285484 | val_loss=-2.323353 | val_dir_acc=0.9964 | 202.9s
+epoch 04/10 | train_loss=-2.284444 | val_loss=-2.305882 | val_dir_acc=0.9964 | 206.9s
+epoch 05/10 | train_loss=-2.289629 | val_loss=-2.321765 | val_dir_acc=0.9964 | 201.7s
+epoch 06/10 | train_loss=-2.298916 | val_loss=-2.328189 | val_dir_acc=0.9964 | 201.8s
+epoch 07/10 | train_loss=-2.294149 | val_loss=-2.321590 | val_dir_acc=0.9964 | 205.7s
+epoch 08/10 | train_loss=-2.303254 | val_loss=-2.309191 | val_dir_acc=0.9964 | 213.0s
+epoch 09/10 | train_loss=-2.300651 | val_loss=-2.326473 | val_dir_acc=0.9964 | 208.7s
+epoch 10/10 | train_loss=-2.304367 | val_loss=-2.318990 | val_dir_acc=0.9964 | 273.5s
+Early stopping at epoch 10 (best val_loss=-2.328538)
+[train_pairs] computing GARCH-sigma at ~1966 strided test origins (stride 5, fit_window 5000) -- cached for reuse
+[train_pairs] EURUSD MAGNITUDE: model spearman +0.239 | atr_pct +0.089 | GARCH-sigma +0.145 || large-move acc 0.574 vs 0.489 vs 0.494 (base 0.497) -> BEATS atr_pct, BEATS GARCH
+[train_pairs] EURUSD: Hybrid DirAcc 0.9962 MAE 0.00101 | wf-expert 0.9972 | GARCH 0.4974 | ARIMA 0.4697
+
+======================================================================
+MAGNITUDE SEED 36
+======================================================================
+[train_pairs] MAGNITUDE-TARGET experiment: y = |cumulative return| per horizon; directional loss zeroed; scoring vs atr_pct.
+
+===== EUR/USD (Euro (EUR/USD)) @ 1h =====
+[train_pairs] train stride 3: train 45,850->15,284, val 9,837->3,279 (test untouched)
+[train_pairs] EURUSD: 65587 bars, train=15284 val=3279 test=9828
+[garch-expert] loaded 28391 walk-forward GARCH forecasts (hash OK)
+[wf-expert] reusing cached walk-forward predictions (9828 windows)
+[train_pairs] device=cpu | batch_size=32
+C:\Sudhakar\Github\Forex_Price_Prediction\models\transformer_block.py:52: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+[two-stage] Stage 1: quant-only, text bypassed, 15 epochs, full history (train=15284)
+epoch 01/15 | train_loss=-1.479128 | val_loss=-1.742165 | val_dir_acc=0.8171 | 459.1s
+epoch 02/15 | train_loss=-1.826283 | val_loss=-2.132881 | val_dir_acc=0.9964 | 469.3s
+epoch 03/15 | train_loss=-1.953874 | val_loss=-2.160098 | val_dir_acc=0.9964 | 301.1s
+epoch 04/15 | train_loss=-2.058104 | val_loss=-2.215540 | val_dir_acc=0.9964 | 302.9s
+epoch 05/15 | train_loss=-2.114065 | val_loss=-2.276721 | val_dir_acc=0.9964 | 298.2s
+epoch 06/15 | train_loss=-2.149715 | val_loss=-2.280598 | val_dir_acc=0.9963 | 298.7s
+epoch 07/15 | train_loss=-2.152855 | val_loss=-2.300062 | val_dir_acc=0.9964 | 292.3s
+epoch 08/15 | train_loss=-2.160158 | val_loss=-2.268647 | val_dir_acc=0.9964 | 429.5s
+epoch 09/15 | train_loss=-2.192222 | val_loss=-2.278750 | val_dir_acc=0.9798 | 597.6s
+epoch 10/15 | train_loss=-2.191822 | val_loss=-2.254836 | val_dir_acc=0.9819 | 1056.5s
+epoch 11/15 | train_loss=-2.228253 | val_loss=-2.305296 | val_dir_acc=0.9964 | 1252.8s
+epoch 12/15 | train_loss=-2.241509 | val_loss=-2.328926 | val_dir_acc=0.9964 | 1335.4s
+epoch 13/15 | train_loss=-2.254248 | val_loss=-2.334733 | val_dir_acc=0.9964 | 1322.5s
+epoch 14/15 | train_loss=-2.258523 | val_loss=-2.321277 | val_dir_acc=0.9964 | 1320.9s
+epoch 15/15 | train_loss=-2.254436 | val_loss=-2.314886 | val_dir_acc=0.9964 | 1342.9s
+[two-stage] Stage 2: text+fusion+decoder fine-tune, 10 epochs, news-dense subset (train=11159); froze 4,150,146 quant params, 251,621 trainable
+epoch 01/10 | train_loss=-2.332064 | val_loss=-2.326983 | val_dir_acc=0.9964 | 595.5s
+epoch 02/10 | train_loss=-2.326642 | val_loss=-2.338037 | val_dir_acc=0.9964 | 579.8s
+epoch 03/10 | train_loss=-2.324879 | val_loss=-2.336421 | val_dir_acc=0.9964 | 665.5s
+epoch 04/10 | train_loss=-2.314078 | val_loss=-2.339788 | val_dir_acc=0.9964 | 659.4s
+epoch 05/10 | train_loss=-2.329913 | val_loss=-2.335584 | val_dir_acc=0.9964 | 673.3s
+epoch 06/10 | train_loss=-2.330766 | val_loss=-2.326883 | val_dir_acc=0.9964 | 626.0s
+epoch 07/10 | train_loss=-2.324211 | val_loss=-2.341245 | val_dir_acc=0.9964 | 426.8s
+epoch 08/10 | train_loss=-2.330736 | val_loss=-2.338118 | val_dir_acc=0.9964 | 424.3s
+epoch 09/10 | train_loss=-2.324242 | val_loss=-2.321288 | val_dir_acc=0.9964 | 415.8s
+epoch 10/10 | train_loss=-2.339893 | val_loss=-2.340962 | val_dir_acc=0.9964 | 410.3s
+[train_pairs] GARCH-sigma test cache hit (exports/dashboard\EURUSD\garch_sigma_test.npz)
+[train_pairs] EURUSD MAGNITUDE: model spearman +0.228 | atr_pct +0.089 | GARCH-sigma +0.145 || large-move acc 0.569 vs 0.489 vs 0.494 (base 0.497) -> BEATS atr_pct, BEATS GARCH
+[train_pairs] EURUSD: Hybrid DirAcc 0.9962 MAE 0.00099 | wf-expert 0.9972 | GARCH 0.4974 | ARIMA 0.4697
+
+======================================================================
+MAGNITUDE SEED 99
+======================================================================
+[train_pairs] MAGNITUDE-TARGET experiment: y = |cumulative return| per horizon; directional loss zeroed; scoring vs atr_pct.
+
+===== EUR/USD (Euro (EUR/USD)) @ 1h =====
+[train_pairs] train stride 3: train 45,850->15,284, val 9,837->3,279 (test untouched)
+[train_pairs] EURUSD: 65587 bars, train=15284 val=3279 test=9828
+[garch-expert] loaded 28391 walk-forward GARCH forecasts (hash OK)
+[wf-expert] reusing cached walk-forward predictions (9828 windows)
+[train_pairs] device=cpu | batch_size=32
+C:\Sudhakar\Github\Forex_Price_Prediction\models\transformer_block.py:52: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+[two-stage] Stage 1: quant-only, text bypassed, 15 epochs, full history (train=15284)
+epoch 01/15 | train_loss=-1.489678 | val_loss=-1.854233 | val_dir_acc=0.8970 | 271.7s
+epoch 02/15 | train_loss=-1.812299 | val_loss=-2.140765 | val_dir_acc=0.9275 | 272.3s
+epoch 03/15 | train_loss=-1.950679 | val_loss=-2.252085 | val_dir_acc=0.9961 | 308.2s
+epoch 04/15 | train_loss=-2.026747 | val_loss=-2.255686 | val_dir_acc=0.9859 | 310.0s
+epoch 05/15 | train_loss=-2.112993 | val_loss=-2.019914 | val_dir_acc=0.9964 | 313.1s
+epoch 06/15 | train_loss=-2.148776 | val_loss=-2.277892 | val_dir_acc=0.9919 | 310.3s
+epoch 07/15 | train_loss=-2.184277 | val_loss=-2.304698 | val_dir_acc=0.9964 | 310.5s
+epoch 08/15 | train_loss=-2.194839 | val_loss=-2.213891 | val_dir_acc=0.9964 | 309.1s
+epoch 09/15 | train_loss=-2.201899 | val_loss=-2.245001 | val_dir_acc=0.9964 | 310.5s
+epoch 10/15 | train_loss=-2.216566 | val_loss=-2.286866 | val_dir_acc=0.9964 | 324.1s
+epoch 11/15 | train_loss=-2.257287 | val_loss=-2.314122 | val_dir_acc=0.9964 | 334.2s
+epoch 12/15 | train_loss=-2.260095 | val_loss=-2.299185 | val_dir_acc=0.9964 | 329.7s
+epoch 13/15 | train_loss=-2.273397 | val_loss=-2.312751 | val_dir_acc=0.9963 | 330.7s
+epoch 14/15 | train_loss=-2.274259 | val_loss=-2.328418 | val_dir_acc=0.9964 | 322.8s
+epoch 15/15 | train_loss=-2.287605 | val_loss=-2.327076 | val_dir_acc=0.9964 | 328.4s
+[two-stage] Stage 2: text+fusion+decoder fine-tune, 10 epochs, news-dense subset (train=11159); froze 4,150,146 quant params, 251,621 trainable
+epoch 01/10 | train_loss=-2.340074 | val_loss=-2.341987 | val_dir_acc=0.9964 | 206.1s
+epoch 02/10 | train_loss=-2.352199 | val_loss=-2.340504 | val_dir_acc=0.9964 | 209.3s
+epoch 03/10 | train_loss=-2.348343 | val_loss=-2.339479 | val_dir_acc=0.9964 | 209.0s
+epoch 04/10 | train_loss=-2.346402 | val_loss=-2.338570 | val_dir_acc=0.9964 | 206.9s
+epoch 05/10 | train_loss=-2.350060 | val_loss=-2.336507 | val_dir_acc=0.9964 | 212.2s
+epoch 06/10 | train_loss=-2.355338 | val_loss=-2.347694 | val_dir_acc=0.9964 | 214.3s
+epoch 07/10 | train_loss=-2.349289 | val_loss=-2.338211 | val_dir_acc=0.9964 | 210.8s
+epoch 08/10 | train_loss=-2.356237 | val_loss=-2.343488 | val_dir_acc=0.9964 | 208.2s
+epoch 09/10 | train_loss=-2.359656 | val_loss=-2.344923 | val_dir_acc=0.9964 | 209.7s
+epoch 10/10 | train_loss=-2.359198 | val_loss=-2.348068 | val_dir_acc=0.9964 | 208.8s
+[train_pairs] GARCH-sigma test cache hit (exports/dashboard\EURUSD\garch_sigma_test.npz)
+[train_pairs] EURUSD MAGNITUDE: model spearman +0.229 | atr_pct +0.089 | GARCH-sigma +0.145 || large-move acc 0.569 vs 0.489 vs 0.494 (base 0.497) -> BEATS atr_pct, BEATS GARCH
+[train_pairs] EURUSD: Hybrid DirAcc 0.9962 MAE 0.00100 | wf-expert 0.9972 | GARCH 0.4974 | ARIMA 0.4697
+
+======================================================================
+MAGNITUDE MULTI-SEED SUMMARY (3 seeds: [9, 36, 99])
+======================================================================
+metric                          model    atr_pct  GARCH-sig
+spearman                        0.232      0.089      0.145
+large-move acc                  0.571      0.489      0.494
+
+seeds beating atr_pct on BOTH metrics: 3/3  -> ROBUST: model beats atr_pct across all seeds
+seeds beating GARCH-sigma on BOTH:     3/3  -> ROBUST: model beats GARCH-sigma across all seeds
+
+Written to results/multi_seed_magnitude_EURUSD.json

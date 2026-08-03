@@ -1,0 +1,166 @@
+{
+  "pair": "EUR/USD",
+  "slug": "EURUSD",
+  "interval": "1h",
+  "seeds": [
+    9,
+    36,
+    99
+  ],
+  "n_seeds_scored": 3,
+  "per_seed": [
+    {
+      "model_spearman": 0.2387766886963176,
+      "atr_pct_spearman": 0.08941296061872872,
+      "model_large_move_acc": 0.5743652996196937,
+      "atr_pct_large_move_acc": 0.4886422037208346,
+      "base_rate": 0.496865042655977,
+      "garch_sigma_spearman": 0.1452920342080917,
+      "garch_sigma_large_move_acc": 0.4937814780552986,
+      "seed": 9,
+      "model_spearman_edge": 0.14936372807758888,
+      "model_acc_edge": 0.08572309589885913,
+      "beats_atr_both": true,
+      "model_vs_garch_spearman_edge": 0.0934846544882259,
+      "model_vs_garch_acc_edge": 0.08058382156439514,
+      "beats_garch_both": true
+    },
+    {
+      "model_spearman": 0.2275031111268264,
+      "atr_pct_spearman": 0.08941296061872872,
+      "model_large_move_acc": 0.5692260252852297,
+      "atr_pct_large_move_acc": 0.4886422037208346,
+      "base_rate": 0.496865042655977,
+      "garch_sigma_spearman": 0.1452920342080917,
+      "garch_sigma_large_move_acc": 0.4937814780552986,
+      "seed": 36,
+      "model_spearman_edge": 0.13809015050809767,
+      "model_acc_edge": 0.08058382156439509,
+      "beats_atr_both": true,
+      "model_vs_garch_spearman_edge": 0.0822110769187347,
+      "model_vs_garch_acc_edge": 0.0754445472299311,
+      "beats_garch_both": true
+    },
+    {
+      "model_spearman": 0.22852605587750838,
+      "atr_pct_spearman": 0.08941296061872872,
+      "model_large_move_acc": 0.5692260252852297,
+      "atr_pct_large_move_acc": 0.4886422037208346,
+      "base_rate": 0.496865042655977,
+      "garch_sigma_spearman": 0.1452920342080917,
+      "garch_sigma_large_move_acc": 0.4937814780552986,
+      "seed": 99,
+      "model_spearman_edge": 0.13911309525877966,
+      "model_acc_edge": 0.08058382156439509,
+      "beats_atr_both": true,
+      "model_vs_garch_spearman_edge": 0.08323402166941668,
+      "model_vs_garch_acc_edge": 0.0754445472299311,
+      "beats_garch_both": true
+    }
+  ],
+  "aggregate": {
+    "model_spearman": {
+      "mean": 0.23160195190021746,
+      "std": 0.005090464291903833,
+      "values": [
+        0.2387766886963176,
+        0.2275031111268264,
+        0.22852605587750838
+      ]
+    },
+    "atr_pct_spearman": {
+      "mean": 0.08941296061872872,
+      "std": 0.0,
+      "values": [
+        0.08941296061872872,
+        0.08941296061872872,
+        0.08941296061872872
+      ]
+    },
+    "model_spearman_edge": {
+      "mean": 0.14218899128148874,
+      "std": 0.005090464291903833,
+      "values": [
+        0.14936372807758888,
+        0.13809015050809767,
+        0.13911309525877966
+      ]
+    },
+    "model_large_move_acc": {
+      "mean": 0.570939116730051,
+      "std": 0.0024226771548516686,
+      "values": [
+        0.5743652996196937,
+        0.5692260252852297,
+        0.5692260252852297
+      ]
+    },
+    "atr_pct_large_move_acc": {
+      "mean": 0.4886422037208346,
+      "std": 0.0,
+      "values": [
+        0.4886422037208346,
+        0.4886422037208346,
+        0.4886422037208346
+      ]
+    },
+    "model_acc_edge": {
+      "mean": 0.08229691300921643,
+      "std": 0.0024226771548516686,
+      "values": [
+        0.08572309589885913,
+        0.08058382156439509,
+        0.08058382156439509
+      ]
+    },
+    "base_rate": {
+      "mean": 0.4968650426559769,
+      "std": 5.551115123125783e-17,
+      "values": [
+        0.496865042655977,
+        0.496865042655977,
+        0.496865042655977
+      ]
+    },
+    "garch_sigma_spearman": {
+      "mean": 0.1452920342080917,
+      "std": 0.0,
+      "values": [
+        0.1452920342080917,
+        0.1452920342080917,
+        0.1452920342080917
+      ]
+    },
+    "garch_sigma_large_move_acc": {
+      "mean": 0.49378147805529854,
+      "std": 5.551115123125783e-17,
+      "values": [
+        0.4937814780552986,
+        0.4937814780552986,
+        0.4937814780552986
+      ]
+    },
+    "model_vs_garch_spearman_edge": {
+      "mean": 0.08630991769212576,
+      "std": 0.005090464291903833,
+      "values": [
+        0.0934846544882259,
+        0.0822110769187347,
+        0.08323402166941668
+      ]
+    },
+    "model_vs_garch_acc_edge": {
+      "mean": 0.07715763867475245,
+      "std": 0.0024226771548516686,
+      "values": [
+        0.08058382156439514,
+        0.0754445472299311,
+        0.0754445472299311
+      ]
+    }
+  },
+  "n_seeds_beating_atr_both": 3,
+  "verdict": "ROBUST: model beats atr_pct across all seeds",
+  "n_seeds_beating_garch_both": 3,
+  "garch_verdict": "ROBUST: model beats GARCH-sigma across all seeds"
+}

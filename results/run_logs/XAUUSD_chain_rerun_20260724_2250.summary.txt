@@ -1,0 +1,6 @@
+[22:50:06] === RE-RUN steps 2+3: XAU/USD (XAUUSD) (fixed H1 baseline crash) ===
+[22:50:06] STEP 2/3 main -> results/run_logs/XAUUSD_2_main_20260724_2250.log
+[02:26:24] STEP 2 rc=0
+[02:26:25] STEP 3/3 run_multi_seed 9 36 99 -> results/run_logs/XAUUSD_3_multiseed_20260724_2250.log
+[09:39:22] STEP 3 rc=0
+[09:39:22] === RE-RUN DONE rc(main=0 multiseed=0) ===

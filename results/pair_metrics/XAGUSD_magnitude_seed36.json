@@ -1,0 +1,102 @@
+{
+  "pair": "XAG/USD",
+  "slug": "XAGUSD",
+  "label": "Silver (XAG/USD)",
+  "target": "magnitude",
+  "magnitude_vs_atr": {
+    "model_spearman": 0.41775270496238115,
+    "atr_pct_spearman": 0.3771234235718001,
+    "model_large_move_acc": 0.5503246753246753,
+    "atr_pct_large_move_acc": 0.5182900432900432,
+    "base_rate": 0.5119047619047619,
+    "garch_sigma_spearman": 0.3462564459869809,
+    "garch_sigma_large_move_acc": 0.5057359307359307
+  },
+  "seed": 36,
+  "saved_at": "2026-07-27T07:16:18",
+  "interval": "1h",
+  "smoke": false,
+  "epochs": 25,
+  "feature_names": [
+    "ret_open",
+    "ret_high",
+    "ret_low",
+    "ret_close",
+    "rsi",
+    "macd_hist",
+    "bb_width",
+    "volume_z",
+    "atr_pct",
+    "roc_10",
+    "stoch_k",
+    "ema_ratio",
+    "env_dev20",
+    "bb_pctb",
+    "drift_5",
+    "drift_21",
+    "drift_60",
+    "drift_tstat",
+    "rate_z21",
+    "yield_chg5",
+    "dollar_ret5",
+    "cpi_yoy",
+    "cpi_mom",
+    "days_since_cpi",
+    "sent_mean",
+    "sent_std",
+    "sent_min",
+    "sent_max",
+    "sent_decay",
+    "sent_momentum",
+    "sent_vol",
+    "sent_diffusion",
+    "headline_count_z",
+    "sig_buy",
+    "sig_sell",
+    "sig_hold",
+    "sig_none"
+  ],
+  "lookback": 60,
+  "horizon": 10,
+  "n_total": 37,
+  "bars": 62328,
+  "date_start": "2016-01-04 01:00:00",
+  "date_end": "2026-07-16 21:00:00",
+  "split": {
+    "train": 14523,
+    "val": 3116,
+    "test": 9339
+  },
+  "hybrid": {
+    "DirAcc": 0.996712710140272,
+    "MAE": 0.006003088317811489,
+    "RMSE": 0.010804062709212303,
+    "DirAcc_calibrated": NaN
+  },
+  "calibration": {
+    "sign_thresholds": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "always_up_base_rate": NaN,
+    "edge_vs_base_pp": NaN
+  },
+  "wf_expert_diracc": 0.996712710140272,
+  "garch": {
+    "DirAcc": 0.5184602205803619,
+    "MAE": 0.009003522713187153
+  },
+  "arima": {
+    "DirAcc": 0.49795481314915946,
+    "MAE": 0.009022112933993777
+  },
+  "n_params": 4401767
+}

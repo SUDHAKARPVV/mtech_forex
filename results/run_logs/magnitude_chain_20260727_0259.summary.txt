@@ -1,0 +1,5 @@
+[02:59:15] === MAGNITUDE 3-seed XAG/USD (XAGUSD) -> results/run_logs/XAGUSD_magnitude_3seed_20260727_0259.log ===
+[08:55:33] XAGUSD magnitude rc=0
+[08:55:33] === MAGNITUDE 3-seed EUR/USD (EURUSD) -> results/run_logs/EURUSD_magnitude_3seed_20260727_0259.log ===
+[17:47:41] EURUSD magnitude rc=0
+[17:47:41] === MAGNITUDE CHAIN DONE ===

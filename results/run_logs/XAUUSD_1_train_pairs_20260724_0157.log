@@ -1,0 +1,134 @@
+
+===== XAU/USD (Gold (XAU/USD)) @ 1h =====
+[train_pairs] train stride 3: train 43,374->14,458, val 9,306->3,102 (test untouched)
+[train_pairs] XAUUSD: 62049 bars, train=14458 val=3102 test=9297
+[garch-expert] loaded 26857 walk-forward GARCH forecasts (hash OK)
+[wf-expert] block 1/93: refit on 17557 windows (cutoff idx 52730), predicted 100
+[wf-expert] block 2/93: refit on 17650 windows (cutoff idx 52830), predicted 100
+[wf-expert] block 3/93: refit on 17750 windows (cutoff idx 52930), predicted 100
+[wf-expert] block 4/93: refit on 17850 windows (cutoff idx 53030), predicted 100
+[wf-expert] block 5/93: refit on 17950 windows (cutoff idx 53130), predicted 100
+[wf-expert] block 6/93: refit on 18050 windows (cutoff idx 53230), predicted 100
+[wf-expert] block 7/93: refit on 18150 windows (cutoff idx 53330), predicted 100
+[wf-expert] block 8/93: refit on 18250 windows (cutoff idx 53430), predicted 100
+[wf-expert] block 9/93: refit on 18350 windows (cutoff idx 53530), predicted 100
+[wf-expert] block 10/93: refit on 18450 windows (cutoff idx 53630), predicted 100
+[wf-expert] block 11/93: refit on 18550 windows (cutoff idx 53730), predicted 100
+[wf-expert] block 12/93: refit on 18650 windows (cutoff idx 53830), predicted 100
+[wf-expert] block 13/93: refit on 18750 windows (cutoff idx 53930), predicted 100
+[wf-expert] block 14/93: refit on 18850 windows (cutoff idx 54030), predicted 100
+[wf-expert] block 15/93: refit on 18950 windows (cutoff idx 54130), predicted 100
+[wf-expert] block 16/93: refit on 19050 windows (cutoff idx 54230), predicted 100
+[wf-expert] block 17/93: refit on 19150 windows (cutoff idx 54330), predicted 100
+[wf-expert] block 18/93: refit on 19250 windows (cutoff idx 54430), predicted 100
+[wf-expert] block 19/93: refit on 19350 windows (cutoff idx 54530), predicted 100
+[wf-expert] block 20/93: refit on 19450 windows (cutoff idx 54630), predicted 100
+[wf-expert] block 21/93: refit on 19550 windows (cutoff idx 54730), predicted 100
+[wf-expert] block 22/93: refit on 19650 windows (cutoff idx 54830), predicted 100
+[wf-expert] block 23/93: refit on 19750 windows (cutoff idx 54930), predicted 100
+[wf-expert] block 24/93: refit on 19850 windows (cutoff idx 55030), predicted 100
+[wf-expert] block 25/93: refit on 19950 windows (cutoff idx 55130), predicted 100
+[wf-expert] block 26/93: refit on 20050 windows (cutoff idx 55230), predicted 100
+[wf-expert] block 27/93: refit on 20150 windows (cutoff idx 55330), predicted 100
+[wf-expert] block 28/93: refit on 20250 windows (cutoff idx 55430), predicted 100
+[wf-expert] block 29/93: refit on 20350 windows (cutoff idx 55530), predicted 100
+[wf-expert] block 30/93: refit on 20450 windows (cutoff idx 55630), predicted 100
+[wf-expert] block 31/93: refit on 20550 windows (cutoff idx 55730), predicted 100
+[wf-expert] block 32/93: refit on 20650 windows (cutoff idx 55830), predicted 100
+[wf-expert] block 33/93: refit on 20750 windows (cutoff idx 55930), predicted 100
+[wf-expert] block 34/93: refit on 20850 windows (cutoff idx 56030), predicted 100
+[wf-expert] block 35/93: refit on 20950 windows (cutoff idx 56130), predicted 100
+[wf-expert] block 36/93: refit on 21050 windows (cutoff idx 56230), predicted 100
+[wf-expert] block 37/93: refit on 21150 windows (cutoff idx 56330), predicted 100
+[wf-expert] block 38/93: refit on 21250 windows (cutoff idx 56430), predicted 100
+[wf-expert] block 39/93: refit on 21350 windows (cutoff idx 56530), predicted 100
+[wf-expert] block 40/93: refit on 21450 windows (cutoff idx 56630), predicted 100
+[wf-expert] block 41/93: refit on 21550 windows (cutoff idx 56730), predicted 100
+[wf-expert] block 42/93: refit on 21650 windows (cutoff idx 56830), predicted 100
+[wf-expert] block 43/93: refit on 21750 windows (cutoff idx 56930), predicted 100
+[wf-expert] block 44/93: refit on 21850 windows (cutoff idx 57030), predicted 100
+[wf-expert] block 45/93: refit on 21950 windows (cutoff idx 57130), predicted 100
+[wf-expert] block 46/93: refit on 22050 windows (cutoff idx 57230), predicted 100
+[wf-expert] block 47/93: refit on 22150 windows (cutoff idx 57330), predicted 100
+[wf-expert] block 48/93: refit on 22250 windows (cutoff idx 57430), predicted 100
+[wf-expert] block 49/93: refit on 22350 windows (cutoff idx 57530), predicted 100
+[wf-expert] block 50/93: refit on 22450 windows (cutoff idx 57630), predicted 100
+[wf-expert] block 51/93: refit on 22550 windows (cutoff idx 57730), predicted 100
+[wf-expert] block 52/93: refit on 22650 windows (cutoff idx 57830), predicted 100
+[wf-expert] block 53/93: refit on 22750 windows (cutoff idx 57930), predicted 100
+[wf-expert] block 54/93: refit on 22850 windows (cutoff idx 58030), predicted 100
+[wf-expert] block 55/93: refit on 22950 windows (cutoff idx 58130), predicted 100
+[wf-expert] block 56/93: refit on 23050 windows (cutoff idx 58230), predicted 100
+[wf-expert] block 57/93: refit on 23150 windows (cutoff idx 58330), predicted 100
+[wf-expert] block 58/93: refit on 23250 windows (cutoff idx 58430), predicted 100
+[wf-expert] block 59/93: refit on 23350 windows (cutoff idx 58530), predicted 100
+[wf-expert] block 60/93: refit on 23450 windows (cutoff idx 58630), predicted 100
+[wf-expert] block 61/93: refit on 23550 windows (cutoff idx 58730), predicted 100
+[wf-expert] block 62/93: refit on 23650 windows (cutoff idx 58830), predicted 100
+[wf-expert] block 63/93: refit on 23750 windows (cutoff idx 58930), predicted 100
+[wf-expert] block 64/93: refit on 23850 windows (cutoff idx 59030), predicted 100
+[wf-expert] block 65/93: refit on 23950 windows (cutoff idx 59130), predicted 100
+[wf-expert] block 66/93: refit on 24050 windows (cutoff idx 59230), predicted 100
+[wf-expert] block 67/93: refit on 24150 windows (cutoff idx 59330), predicted 100
+[wf-expert] block 68/93: refit on 24250 windows (cutoff idx 59430), predicted 100
+[wf-expert] block 69/93: refit on 24350 windows (cutoff idx 59530), predicted 100
+[wf-expert] block 70/93: refit on 24450 windows (cutoff idx 59630), predicted 100
+[wf-expert] block 71/93: refit on 24550 windows (cutoff idx 59730), predicted 100
+[wf-expert] block 72/93: refit on 24650 windows (cutoff idx 59830), predicted 100
+[wf-expert] block 73/93: refit on 24750 windows (cutoff idx 59930), predicted 100
+[wf-expert] block 74/93: refit on 24850 windows (cutoff idx 60030), predicted 100
+[wf-expert] block 75/93: refit on 24950 windows (cutoff idx 60130), predicted 100
+[wf-expert] block 76/93: refit on 25050 windows (cutoff idx 60230), predicted 100
+[wf-expert] block 77/93: refit on 25150 windows (cutoff idx 60330), predicted 100
+[wf-expert] block 78/93: refit on 25250 windows (cutoff idx 60430), predicted 100
+[wf-expert] block 79/93: refit on 25350 windows (cutoff idx 60530), predicted 100
+[wf-expert] block 80/93: refit on 25450 windows (cutoff idx 60630), predicted 100
+[wf-expert] block 81/93: refit on 25550 windows (cutoff idx 60730), predicted 100
+[wf-expert] block 82/93: refit on 25650 windows (cutoff idx 60830), predicted 100
+[wf-expert] block 83/93: refit on 25750 windows (cutoff idx 60930), predicted 100
+[wf-expert] block 84/93: refit on 25850 windows (cutoff idx 61030), predicted 100
+[wf-expert] block 85/93: refit on 25950 windows (cutoff idx 61130), predicted 100
+[wf-expert] block 86/93: refit on 26050 windows (cutoff idx 61230), predicted 100
+[wf-expert] block 87/93: refit on 26150 windows (cutoff idx 61330), predicted 100
+[wf-expert] block 88/93: refit on 26250 windows (cutoff idx 61430), predicted 100
+[wf-expert] block 89/93: refit on 26350 windows (cutoff idx 61530), predicted 100
+[wf-expert] block 90/93: refit on 26450 windows (cutoff idx 61630), predicted 100
+[wf-expert] block 91/93: refit on 26550 windows (cutoff idx 61730), predicted 100
+[wf-expert] block 92/93: refit on 26650 windows (cutoff idx 61830), predicted 100
+[wf-expert] block 93/93: refit on 26750 windows (cutoff idx 61930), predicted 97
+[train_pairs] device=cpu | batch_size=32
+C:\Sudhakar\Github\Forex_Price_Prediction\models\transformer_block.py:52: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+[two-stage] Stage 1: quant-only, text bypassed, 15 epochs, full history (train=14458)
+epoch 01/15 | train_loss=-0.932557 | val_loss=-1.007243 | val_dir_acc=0.4833 | 287.5s
+epoch 02/15 | train_loss=-1.119545 | val_loss=-1.140519 | val_dir_acc=0.4835 | 305.9s
+epoch 03/15 | train_loss=-1.190081 | val_loss=-1.099357 | val_dir_acc=0.5093 | 304.1s
+epoch 04/15 | train_loss=-1.232303 | val_loss=-1.154919 | val_dir_acc=0.4967 | 311.7s
+epoch 05/15 | train_loss=-1.263782 | val_loss=-1.175533 | val_dir_acc=0.4982 | 303.9s
+epoch 06/15 | train_loss=-1.278923 | val_loss=-1.162384 | val_dir_acc=0.5120 | 312.0s
+epoch 07/15 | train_loss=-1.284984 | val_loss=-1.182106 | val_dir_acc=0.5089 | 295.7s
+epoch 08/15 | train_loss=-1.296229 | val_loss=-1.179024 | val_dir_acc=0.5078 | 293.3s
+epoch 09/15 | train_loss=-1.302956 | val_loss=-1.176200 | val_dir_acc=0.5068 | 290.5s
+epoch 10/15 | train_loss=-1.298520 | val_loss=-1.166513 | val_dir_acc=0.5068 | 288.9s
+epoch 11/15 | train_loss=-1.332851 | val_loss=-1.175980 | val_dir_acc=0.5136 | 295.0s
+epoch 12/15 | train_loss=-1.338229 | val_loss=-1.175419 | val_dir_acc=0.5067 | 298.8s
+epoch 13/15 | train_loss=-1.338153 | val_loss=-1.187337 | val_dir_acc=0.5022 | 291.9s
+epoch 14/15 | train_loss=-1.344875 | val_loss=-1.145168 | val_dir_acc=0.5022 | 289.9s
+epoch 15/15 | train_loss=-1.344740 | val_loss=-1.171046 | val_dir_acc=0.5139 | 290.5s
+[two-stage] Stage 2: text+fusion+decoder fine-tune, 10 epochs, news-dense subset (train=10561); froze 4,150,146 quant params, 251,621 trainable
+epoch 01/10 | train_loss=-1.360558 | val_loss=-1.161494 | val_dir_acc=0.5135 | 198.2s
+epoch 02/10 | train_loss=-1.356965 | val_loss=-1.171609 | val_dir_acc=0.5075 | 198.6s
+epoch 03/10 | train_loss=-1.365456 | val_loss=-1.159850 | val_dir_acc=0.5072 | 191.7s
+epoch 04/10 | train_loss=-1.360874 | val_loss=-1.163800 | val_dir_acc=0.5158 | 192.2s
+epoch 05/10 | train_loss=-1.359234 | val_loss=-1.166102 | val_dir_acc=0.5087 | 201.8s
+epoch 06/10 | train_loss=-1.368760 | val_loss=-1.161942 | val_dir_acc=0.5121 | 192.2s
+epoch 07/10 | train_loss=-1.359516 | val_loss=-1.167974 | val_dir_acc=0.5077 | 192.1s
+epoch 08/10 | train_loss=-1.364335 | val_loss=-1.166332 | val_dir_acc=0.5092 | 194.9s
+epoch 09/10 | train_loss=-1.368546 | val_loss=-1.163793 | val_dir_acc=0.5112 | 196.9s
+epoch 10/10 | train_loss=-1.367198 | val_loss=-1.163210 | val_dir_acc=0.5117 | 199.6s
+[train_pairs] XAUUSD: val-calibrated DirAcc 0.5223 (raw 0.5167, always-up base 0.5344, edge -1.2pp)
+[train_pairs] XAUUSD: Hybrid DirAcc 0.5167 MAE 0.00495 | wf-expert 0.5152 | GARCH 0.5329 | ARIMA 0.5142
+
+[train_pairs] wrote results/pair_metrics/all_pairs.json
+pair         Hybrid   wf-exp    GARCH    ARIMA
+XAU/USD      0.5167   0.5152   0.5329   0.5142

@@ -1,0 +1,8 @@
+[01:57:44] === FINAL RUN CHAIN: XAU/USD (XAUUSD) ===
+[01:57:44] STEP 1/3 train_pairs -> results/run_logs/XAUUSD_1_train_pairs_20260724_0157.log
+[04:07:00] STEP 1 rc=0
+[04:07:00] STEP 2/3 main -> results/run_logs/XAUUSD_2_main_20260724_0157.log
+[07:30:13] STEP 2 rc=1
+[07:30:13] STEP 3/3 run_multi_seed 9 36 99 -> results/run_logs/XAUUSD_3_multiseed_20260724_0157.log
+[11:14:34] STEP 3 rc=1
+[11:14:34] === CHAIN DONE rc(train=0 main=1 multiseed=1) ===

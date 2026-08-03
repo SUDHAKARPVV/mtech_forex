@@ -1,0 +1,130 @@
+[sig] walk-forward expert ...
+[wf-expert] block 1/99: refit on 18560 windows (cutoff idx 55737), predicted 100
+[wf-expert] block 2/99: refit on 18653 windows (cutoff idx 55837), predicted 100
+[wf-expert] block 3/99: refit on 18753 windows (cutoff idx 55937), predicted 100
+[wf-expert] block 4/99: refit on 18853 windows (cutoff idx 56037), predicted 100
+[wf-expert] block 5/99: refit on 18953 windows (cutoff idx 56137), predicted 100
+[wf-expert] block 6/99: refit on 19053 windows (cutoff idx 56237), predicted 100
+[wf-expert] block 7/99: refit on 19153 windows (cutoff idx 56337), predicted 100
+[wf-expert] block 8/99: refit on 19253 windows (cutoff idx 56437), predicted 100
+[wf-expert] block 9/99: refit on 19353 windows (cutoff idx 56537), predicted 100
+[wf-expert] block 10/99: refit on 19453 windows (cutoff idx 56637), predicted 100
+[wf-expert] block 11/99: refit on 19553 windows (cutoff idx 56737), predicted 100
+[wf-expert] block 12/99: refit on 19653 windows (cutoff idx 56837), predicted 100
+[wf-expert] block 13/99: refit on 19753 windows (cutoff idx 56937), predicted 100
+[wf-expert] block 14/99: refit on 19853 windows (cutoff idx 57037), predicted 100
+[wf-expert] block 15/99: refit on 19953 windows (cutoff idx 57137), predicted 100
+[wf-expert] block 16/99: refit on 20053 windows (cutoff idx 57237), predicted 100
+[wf-expert] block 17/99: refit on 20153 windows (cutoff idx 57337), predicted 100
+[wf-expert] block 18/99: refit on 20253 windows (cutoff idx 57437), predicted 100
+[wf-expert] block 19/99: refit on 20353 windows (cutoff idx 57537), predicted 100
+[wf-expert] block 20/99: refit on 20453 windows (cutoff idx 57637), predicted 100
+[wf-expert] block 21/99: refit on 20553 windows (cutoff idx 57737), predicted 100
+[wf-expert] block 22/99: refit on 20653 windows (cutoff idx 57837), predicted 100
+[wf-expert] block 23/99: refit on 20753 windows (cutoff idx 57937), predicted 100
+[wf-expert] block 24/99: refit on 20853 windows (cutoff idx 58037), predicted 100
+[wf-expert] block 25/99: refit on 20953 windows (cutoff idx 58137), predicted 100
+[wf-expert] block 26/99: refit on 21053 windows (cutoff idx 58237), predicted 100
+[wf-expert] block 27/99: refit on 21153 windows (cutoff idx 58337), predicted 100
+[wf-expert] block 28/99: refit on 21253 windows (cutoff idx 58437), predicted 100
+[wf-expert] block 29/99: refit on 21353 windows (cutoff idx 58537), predicted 100
+[wf-expert] block 30/99: refit on 21453 windows (cutoff idx 58637), predicted 100
+[wf-expert] block 31/99: refit on 21553 windows (cutoff idx 58737), predicted 100
+[wf-expert] block 32/99: refit on 21653 windows (cutoff idx 58837), predicted 100
+[wf-expert] block 33/99: refit on 21753 windows (cutoff idx 58937), predicted 100
+[wf-expert] block 34/99: refit on 21853 windows (cutoff idx 59037), predicted 100
+[wf-expert] block 35/99: refit on 21953 windows (cutoff idx 59137), predicted 100
+[wf-expert] block 36/99: refit on 22053 windows (cutoff idx 59237), predicted 100
+[wf-expert] block 37/99: refit on 22153 windows (cutoff idx 59337), predicted 100
+[wf-expert] block 38/99: refit on 22253 windows (cutoff idx 59437), predicted 100
+[wf-expert] block 39/99: refit on 22353 windows (cutoff idx 59537), predicted 100
+[wf-expert] block 40/99: refit on 22453 windows (cutoff idx 59637), predicted 100
+[wf-expert] block 41/99: refit on 22553 windows (cutoff idx 59737), predicted 100
+[wf-expert] block 42/99: refit on 22653 windows (cutoff idx 59837), predicted 100
+[wf-expert] block 43/99: refit on 22753 windows (cutoff idx 59937), predicted 100
+[wf-expert] block 44/99: refit on 22853 windows (cutoff idx 60037), predicted 100
+[wf-expert] block 45/99: refit on 22953 windows (cutoff idx 60137), predicted 100
+[wf-expert] block 46/99: refit on 23053 windows (cutoff idx 60237), predicted 100
+[wf-expert] block 47/99: refit on 23153 windows (cutoff idx 60337), predicted 100
+[wf-expert] block 48/99: refit on 23253 windows (cutoff idx 60437), predicted 100
+[wf-expert] block 49/99: refit on 23353 windows (cutoff idx 60537), predicted 100
+[wf-expert] block 50/99: refit on 23453 windows (cutoff idx 60637), predicted 100
+[wf-expert] block 51/99: refit on 23553 windows (cutoff idx 60737), predicted 100
+[wf-expert] block 52/99: refit on 23653 windows (cutoff idx 60837), predicted 100
+[wf-expert] block 53/99: refit on 23753 windows (cutoff idx 60937), predicted 100
+[wf-expert] block 54/99: refit on 23853 windows (cutoff idx 61037), predicted 100
+[wf-expert] block 55/99: refit on 23953 windows (cutoff idx 61137), predicted 100
+[wf-expert] block 56/99: refit on 24053 windows (cutoff idx 61237), predicted 100
+[wf-expert] block 57/99: refit on 24153 windows (cutoff idx 61337), predicted 100
+[wf-expert] block 58/99: refit on 24253 windows (cutoff idx 61437), predicted 100
+[wf-expert] block 59/99: refit on 24353 windows (cutoff idx 61537), predicted 100
+[wf-expert] block 60/99: refit on 24453 windows (cutoff idx 61637), predicted 100
+[wf-expert] block 61/99: refit on 24553 windows (cutoff idx 61737), predicted 100
+[wf-expert] block 62/99: refit on 24653 windows (cutoff idx 61837), predicted 100
+[wf-expert] block 63/99: refit on 24753 windows (cutoff idx 61937), predicted 100
+[wf-expert] block 64/99: refit on 24853 windows (cutoff idx 62037), predicted 100
+[wf-expert] block 65/99: refit on 24953 windows (cutoff idx 62137), predicted 100
+[wf-expert] block 66/99: refit on 25053 windows (cutoff idx 62237), predicted 100
+[wf-expert] block 67/99: refit on 25153 windows (cutoff idx 62337), predicted 100
+[wf-expert] block 68/99: refit on 25253 windows (cutoff idx 62437), predicted 100
+[wf-expert] block 69/99: refit on 25353 windows (cutoff idx 62537), predicted 100
+[wf-expert] block 70/99: refit on 25453 windows (cutoff idx 62637), predicted 100
+[wf-expert] block 71/99: refit on 25553 windows (cutoff idx 62737), predicted 100
+[wf-expert] block 72/99: refit on 25653 windows (cutoff idx 62837), predicted 100
+[wf-expert] block 73/99: refit on 25753 windows (cutoff idx 62937), predicted 100
+[wf-expert] block 74/99: refit on 25853 windows (cutoff idx 63037), predicted 100
+[wf-expert] block 75/99: refit on 25953 windows (cutoff idx 63137), predicted 100
+[wf-expert] block 76/99: refit on 26053 windows (cutoff idx 63237), predicted 100
+[wf-expert] block 77/99: refit on 26153 windows (cutoff idx 63337), predicted 100
+[wf-expert] block 78/99: refit on 26253 windows (cutoff idx 63437), predicted 100
+[wf-expert] block 79/99: refit on 26353 windows (cutoff idx 63537), predicted 100
+[wf-expert] block 80/99: refit on 26453 windows (cutoff idx 63637), predicted 100
+[wf-expert] block 81/99: refit on 26553 windows (cutoff idx 63737), predicted 100
+[wf-expert] block 82/99: refit on 26653 windows (cutoff idx 63837), predicted 100
+[wf-expert] block 83/99: refit on 26753 windows (cutoff idx 63937), predicted 100
+[wf-expert] block 84/99: refit on 26853 windows (cutoff idx 64037), predicted 100
+[wf-expert] block 85/99: refit on 26953 windows (cutoff idx 64137), predicted 100
+[wf-expert] block 86/99: refit on 27053 windows (cutoff idx 64237), predicted 100
+[wf-expert] block 87/99: refit on 27153 windows (cutoff idx 64337), predicted 100
+[wf-expert] block 88/99: refit on 27253 windows (cutoff idx 64437), predicted 100
+[wf-expert] block 89/99: refit on 27353 windows (cutoff idx 64537), predicted 100
+[wf-expert] block 90/99: refit on 27453 windows (cutoff idx 64637), predicted 100
+[wf-expert] block 91/99: refit on 27553 windows (cutoff idx 64737), predicted 100
+[wf-expert] block 92/99: refit on 27653 windows (cutoff idx 64837), predicted 100
+[wf-expert] block 93/99: refit on 27753 windows (cutoff idx 64937), predicted 100
+[wf-expert] block 94/99: refit on 27853 windows (cutoff idx 65037), predicted 100
+[wf-expert] block 95/99: refit on 27953 windows (cutoff idx 65137), predicted 100
+[wf-expert] block 96/99: refit on 28053 windows (cutoff idx 65237), predicted 100
+[wf-expert] block 97/99: refit on 28153 windows (cutoff idx 65337), predicted 100
+[wf-expert] block 98/99: refit on 28253 windows (cutoff idx 65437), predicted 100
+[wf-expert] block 99/99: refit on 28353 windows (cutoff idx 65537), predicted 28
+C:\Sudhakar\Github\Forex_Price_Prediction\models\transformer_block.py:52: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+[sig] loaded cached arrays (results/significance_arrays_EURUSD.npz)
+reproduction OK (test spearman 0.2361); n_test=9,828
+
+====================================================================
+1. BLOCK BOOTSTRAP of the reported-metric differences (model - baseline)
+====================================================================
+  model - atr   spearman       : mean +0.1503  95%CI[+0.0880,+0.2141]  p(diff<=0)=0.0000 ***
+  model - atr   large-move acc : mean +0.0860  95%CI[+0.0572,+0.1142]  p(diff<=0)=0.0000 ***
+  model - garch spearman       : mean +0.0954  95%CI[+0.0440,+0.1458]  p(diff<=0)=0.0000 ***
+  model - garch large-move acc : mean +0.0809  95%CI[+0.0554,+0.1073]  p(diff<=0)=0.0000 ***
+
+====================================================================
+2. DIEBOLD-MARIANO (squared-error of |10-bar move|, Newey-West HAC lag=10)
+====================================================================
+  model vs atr  : DM=+1.147  p=0.2513  -> not significant
+  model vs garch: DM=+1.135  p=0.2563  -> not significant
+
+====================================================================
+3. HANSEN MODEL CONFIDENCE SET (90%)
+====================================================================
+             Pvalue
+Model name         
+Hybrid        0.634
+GARCH_sigma   0.642
+atr_pct       1.000
+  -> MCS(90%) includes: ['GARCH_sigma', 'Hybrid', 'atr_pct']
+
+written to results/significance_magnitude_EURUSD.json

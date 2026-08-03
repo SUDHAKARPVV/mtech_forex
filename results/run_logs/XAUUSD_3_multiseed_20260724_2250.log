@@ -1,0 +1,327 @@
+[gate] feature panel OK: 62049 bars, test-set sentiment coverage 99.9%
+
+======================================================================
+SEED 9
+======================================================================
+
+=== Building multi-modal panel for XAU/USD (source=panel, n_days=100, interval=1h) ===
+[data] panel source actually used: real  (signal_strength=n/a)
+[data] train stride 3: train 43,374->14,458, val 9,306->3,102 (test untouched)
+train=14458  val=3102  test=9297  features=37
+[stationarity] ADF statistic=-1.0742  p-value=0.9333  -> non-stationary (unit root present, as Paper 1 also found)
+
+=== Fitting XGBoost expert (fused inside the Hybrid architecture) ===
+[features] XGBoost importance audit -- top: bb_pctb=0.034, ema_ratio=0.034, atr_pct=0.034, dollar_ret5=0.033, sig_none=0.032, env_dev20=0.032
+[features] lowest-importance (noise candidates): sig_sell=0.020, sig_buy=0.019, cpi_mom=0.000, cpi_yoy=0.000, days_since_cpi=0.000
+[garch-expert] loaded 26857 walk-forward GARCH forecasts (hash OK)
+
+=== Training Hybrid CNN-LSTM-Transformer (+ internally-fused XGBoost branch) ===
+C:\Sudhakar\Github\Forex_Price_Prediction\models\transformer_block.py:52: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+Hybrid model parameters: 4,401,767 (4.40M)
+[two-stage] Stage 1: quant-only, text bypassed, 18 epochs, full history (train=14458)
+epoch 01/18 | train_loss=-0.932557 | val_loss=-1.007243 | val_dir_acc=0.4833 | 241.6s
+epoch 02/18 | train_loss=-1.119545 | val_loss=-1.140519 | val_dir_acc=0.4835 | 265.0s
+epoch 03/18 | train_loss=-1.190081 | val_loss=-1.099357 | val_dir_acc=0.5093 | 266.4s
+epoch 04/18 | train_loss=-1.232303 | val_loss=-1.154919 | val_dir_acc=0.4967 | 265.8s
+epoch 05/18 | train_loss=-1.263782 | val_loss=-1.175533 | val_dir_acc=0.4982 | 269.3s
+epoch 06/18 | train_loss=-1.278923 | val_loss=-1.162384 | val_dir_acc=0.5120 | 269.9s
+epoch 07/18 | train_loss=-1.284984 | val_loss=-1.182106 | val_dir_acc=0.5089 | 269.4s
+epoch 08/18 | train_loss=-1.296229 | val_loss=-1.179024 | val_dir_acc=0.5078 | 276.3s
+epoch 09/18 | train_loss=-1.302956 | val_loss=-1.176200 | val_dir_acc=0.5068 | 304.1s
+epoch 10/18 | train_loss=-1.298520 | val_loss=-1.166513 | val_dir_acc=0.5068 | 324.1s
+epoch 11/18 | train_loss=-1.332851 | val_loss=-1.175980 | val_dir_acc=0.5136 | 323.5s
+epoch 12/18 | train_loss=-1.338229 | val_loss=-1.175419 | val_dir_acc=0.5067 | 278.1s
+epoch 13/18 | train_loss=-1.338153 | val_loss=-1.187337 | val_dir_acc=0.5022 | 275.9s
+epoch 14/18 | train_loss=-1.344875 | val_loss=-1.145168 | val_dir_acc=0.5022 | 273.8s
+epoch 15/18 | train_loss=-1.344740 | val_loss=-1.171046 | val_dir_acc=0.5139 | 273.8s
+epoch 16/18 | train_loss=-1.348516 | val_loss=-1.164301 | val_dir_acc=0.4941 | 271.7s
+epoch 17/18 | train_loss=-1.358958 | val_loss=-1.155543 | val_dir_acc=0.5157 | 273.3s
+epoch 18/18 | train_loss=-1.359834 | val_loss=-1.166249 | val_dir_acc=0.5096 | 275.6s
+[two-stage] Stage 2: text+fusion+decoder fine-tune, 12 epochs, news-dense subset (train=10561); froze 4,150,146 quant params, 251,621 trainable
+epoch 01/12 | train_loss=-1.364649 | val_loss=-1.157406 | val_dir_acc=0.5159 | 183.5s
+epoch 02/12 | train_loss=-1.361095 | val_loss=-1.169070 | val_dir_acc=0.5075 | 185.7s
+epoch 03/12 | train_loss=-1.368833 | val_loss=-1.157922 | val_dir_acc=0.5085 | 183.6s
+epoch 04/12 | train_loss=-1.364633 | val_loss=-1.160918 | val_dir_acc=0.5166 | 187.1s
+epoch 05/12 | train_loss=-1.362706 | val_loss=-1.162330 | val_dir_acc=0.5099 | 181.8s
+epoch 06/12 | train_loss=-1.371349 | val_loss=-1.159256 | val_dir_acc=0.5126 | 181.0s
+epoch 07/12 | train_loss=-1.362392 | val_loss=-1.164222 | val_dir_acc=0.5077 | 181.1s
+epoch 08/12 | train_loss=-1.367844 | val_loss=-1.163307 | val_dir_acc=0.5092 | 180.7s
+epoch 09/12 | train_loss=-1.371735 | val_loss=-1.160385 | val_dir_acc=0.5116 | 185.0s
+epoch 10/12 | train_loss=-1.370151 | val_loss=-1.159943 | val_dir_acc=0.5123 | 185.7s
+epoch 11/12 | train_loss=-1.374425 | val_loss=-1.158868 | val_dir_acc=0.5109 | 182.6s
+epoch 12/12 | train_loss=-1.370949 | val_loss=-1.161410 | val_dir_acc=0.5124 | 181.4s
+Early stopping at epoch 12 (best val_dir_acc=0.5166)
+[adaptive] static-expert Hybrid DirAcc: 0.4969 (expert frozen at the train boundary)
+[wf-expert] block 1/93: refit on 17557 windows (cutoff idx 52730), predicted 100
+[wf-expert] block 2/93: refit on 17650 windows (cutoff idx 52830), predicted 100
+[wf-expert] block 3/93: refit on 17750 windows (cutoff idx 52930), predicted 100
+[wf-expert] block 4/93: refit on 17850 windows (cutoff idx 53030), predicted 100
+[wf-expert] block 5/93: refit on 17950 windows (cutoff idx 53130), predicted 100
+[wf-expert] block 6/93: refit on 18050 windows (cutoff idx 53230), predicted 100
+[wf-expert] block 7/93: refit on 18150 windows (cutoff idx 53330), predicted 100
+[wf-expert] block 8/93: refit on 18250 windows (cutoff idx 53430), predicted 100
+[wf-expert] block 9/93: refit on 18350 windows (cutoff idx 53530), predicted 100
+[wf-expert] block 10/93: refit on 18450 windows (cutoff idx 53630), predicted 100
+[wf-expert] block 11/93: refit on 18550 windows (cutoff idx 53730), predicted 100
+[wf-expert] block 12/93: refit on 18650 windows (cutoff idx 53830), predicted 100
+[wf-expert] block 13/93: refit on 18750 windows (cutoff idx 53930), predicted 100
+[wf-expert] block 14/93: refit on 18850 windows (cutoff idx 54030), predicted 100
+[wf-expert] block 15/93: refit on 18950 windows (cutoff idx 54130), predicted 100
+[wf-expert] block 16/93: refit on 19050 windows (cutoff idx 54230), predicted 100
+[wf-expert] block 17/93: refit on 19150 windows (cutoff idx 54330), predicted 100
+[wf-expert] block 18/93: refit on 19250 windows (cutoff idx 54430), predicted 100
+[wf-expert] block 19/93: refit on 19350 windows (cutoff idx 54530), predicted 100
+[wf-expert] block 20/93: refit on 19450 windows (cutoff idx 54630), predicted 100
+[wf-expert] block 21/93: refit on 19550 windows (cutoff idx 54730), predicted 100
+[wf-expert] block 22/93: refit on 19650 windows (cutoff idx 54830), predicted 100
+[wf-expert] block 23/93: refit on 19750 windows (cutoff idx 54930), predicted 100
+[wf-expert] block 24/93: refit on 19850 windows (cutoff idx 55030), predicted 100
+[wf-expert] block 25/93: refit on 19950 windows (cutoff idx 55130), predicted 100
+[wf-expert] block 26/93: refit on 20050 windows (cutoff idx 55230), predicted 100
+[wf-expert] block 27/93: refit on 20150 windows (cutoff idx 55330), predicted 100
+[wf-expert] block 28/93: refit on 20250 windows (cutoff idx 55430), predicted 100
+[wf-expert] block 29/93: refit on 20350 windows (cutoff idx 55530), predicted 100
+[wf-expert] block 30/93: refit on 20450 windows (cutoff idx 55630), predicted 100
+[wf-expert] block 31/93: refit on 20550 windows (cutoff idx 55730), predicted 100
+[wf-expert] block 32/93: refit on 20650 windows (cutoff idx 55830), predicted 100
+[wf-expert] block 33/93: refit on 20750 windows (cutoff idx 55930), predicted 100
+[wf-expert] block 34/93: refit on 20850 windows (cutoff idx 56030), predicted 100
+[wf-expert] block 35/93: refit on 20950 windows (cutoff idx 56130), predicted 100
+[wf-expert] block 36/93: refit on 21050 windows (cutoff idx 56230), predicted 100
+[wf-expert] block 37/93: refit on 21150 windows (cutoff idx 56330), predicted 100
+[wf-expert] block 38/93: refit on 21250 windows (cutoff idx 56430), predicted 100
+[wf-expert] block 39/93: refit on 21350 windows (cutoff idx 56530), predicted 100
+[wf-expert] block 40/93: refit on 21450 windows (cutoff idx 56630), predicted 100
+[wf-expert] block 41/93: refit on 21550 windows (cutoff idx 56730), predicted 100
+[wf-expert] block 42/93: refit on 21650 windows (cutoff idx 56830), predicted 100
+[wf-expert] block 43/93: refit on 21750 windows (cutoff idx 56930), predicted 100
+[wf-expert] block 44/93: refit on 21850 windows (cutoff idx 57030), predicted 100
+[wf-expert] block 45/93: refit on 21950 windows (cutoff idx 57130), predicted 100
+[wf-expert] block 46/93: refit on 22050 windows (cutoff idx 57230), predicted 100
+[wf-expert] block 47/93: refit on 22150 windows (cutoff idx 57330), predicted 100
+[wf-expert] block 48/93: refit on 22250 windows (cutoff idx 57430), predicted 100
+[wf-expert] block 49/93: refit on 22350 windows (cutoff idx 57530), predicted 100
+[wf-expert] block 50/93: refit on 22450 windows (cutoff idx 57630), predicted 100
+[wf-expert] block 51/93: refit on 22550 windows (cutoff idx 57730), predicted 100
+[wf-expert] block 52/93: refit on 22650 windows (cutoff idx 57830), predicted 100
+[wf-expert] block 53/93: refit on 22750 windows (cutoff idx 57930), predicted 100
+[wf-expert] block 54/93: refit on 22850 windows (cutoff idx 58030), predicted 100
+[wf-expert] block 55/93: refit on 22950 windows (cutoff idx 58130), predicted 100
+[wf-expert] block 56/93: refit on 23050 windows (cutoff idx 58230), predicted 100
+[wf-expert] block 57/93: refit on 23150 windows (cutoff idx 58330), predicted 100
+[wf-expert] block 58/93: refit on 23250 windows (cutoff idx 58430), predicted 100
+[wf-expert] block 59/93: refit on 23350 windows (cutoff idx 58530), predicted 100
+[wf-expert] block 60/93: refit on 23450 windows (cutoff idx 58630), predicted 100
+[wf-expert] block 61/93: refit on 23550 windows (cutoff idx 58730), predicted 100
+[wf-expert] block 62/93: refit on 23650 windows (cutoff idx 58830), predicted 100
+[wf-expert] block 63/93: refit on 23750 windows (cutoff idx 58930), predicted 100
+[wf-expert] block 64/93: refit on 23850 windows (cutoff idx 59030), predicted 100
+[wf-expert] block 65/93: refit on 23950 windows (cutoff idx 59130), predicted 100
+[wf-expert] block 66/93: refit on 24050 windows (cutoff idx 59230), predicted 100
+[wf-expert] block 67/93: refit on 24150 windows (cutoff idx 59330), predicted 100
+[wf-expert] block 68/93: refit on 24250 windows (cutoff idx 59430), predicted 100
+[wf-expert] block 69/93: refit on 24350 windows (cutoff idx 59530), predicted 100
+[wf-expert] block 70/93: refit on 24450 windows (cutoff idx 59630), predicted 100
+[wf-expert] block 71/93: refit on 24550 windows (cutoff idx 59730), predicted 100
+[wf-expert] block 72/93: refit on 24650 windows (cutoff idx 59830), predicted 100
+[wf-expert] block 73/93: refit on 24750 windows (cutoff idx 59930), predicted 100
+[wf-expert] block 74/93: refit on 24850 windows (cutoff idx 60030), predicted 100
+[wf-expert] block 75/93: refit on 24950 windows (cutoff idx 60130), predicted 100
+[wf-expert] block 76/93: refit on 25050 windows (cutoff idx 60230), predicted 100
+[wf-expert] block 77/93: refit on 25150 windows (cutoff idx 60330), predicted 100
+[wf-expert] block 78/93: refit on 25250 windows (cutoff idx 60430), predicted 100
+[wf-expert] block 79/93: refit on 25350 windows (cutoff idx 60530), predicted 100
+[wf-expert] block 80/93: refit on 25450 windows (cutoff idx 60630), predicted 100
+[wf-expert] block 81/93: refit on 25550 windows (cutoff idx 60730), predicted 100
+[wf-expert] block 82/93: refit on 25650 windows (cutoff idx 60830), predicted 100
+[wf-expert] block 83/93: refit on 25750 windows (cutoff idx 60930), predicted 100
+[wf-expert] block 84/93: refit on 25850 windows (cutoff idx 61030), predicted 100
+[wf-expert] block 85/93: refit on 25950 windows (cutoff idx 61130), predicted 100
+[wf-expert] block 86/93: refit on 26050 windows (cutoff idx 61230), predicted 100
+[wf-expert] block 87/93: refit on 26150 windows (cutoff idx 61330), predicted 100
+[wf-expert] block 88/93: refit on 26250 windows (cutoff idx 61430), predicted 100
+[wf-expert] block 89/93: refit on 26350 windows (cutoff idx 61530), predicted 100
+[wf-expert] block 90/93: refit on 26450 windows (cutoff idx 61630), predicted 100
+[wf-expert] block 91/93: refit on 26550 windows (cutoff idx 61730), predicted 100
+[wf-expert] block 92/93: refit on 26650 windows (cutoff idx 61830), predicted 100
+[wf-expert] block 93/93: refit on 26750 windows (cutoff idx 61930), predicted 97
+[adaptive] walk-forward-expert Hybrid DirAcc: 0.5172 (delta +0.0203)
+[export] results/predictions_test_Hybrid_CNN_LSTM_Transformer_seed9.csv
+[hybrid] val-calibrated sign thresholds: test DirAcc 0.5229 (raw 0.5172, always-up base 0.5344, edge vs base -1.2pp)
+[hybrid] calibrated abstention: act on 49% of signals (tau from val q=0.65, mode=follow) -> test selective DirAcc 0.516 vs 0.517 unfiltered
+[backtest] conviction strategy (follow): -21.27% net (buy&hold +49.55%), Sharpe -0.70 (b&h 1.04), in market 55%, 2956 transactions @ 2.0bps
+[hybrid] learned average XGBoost trust weight on test set: 0.920 (0=ignored, 1=fully trusted)
+
+=== Evaluating ARIMA baseline (walk-forward, ≤1500 strided test origins) ===
+[export] ARIMA: 1500 strided baseline origins (< 9297 test) -> full-length CSV skipped
+
+=== Evaluating GARCH baseline (AR(1)-GARCH(1,1), ≤1500 strided test origins) ===
+[export] GARCH: 1500 strided baseline origins (< 9297 test) -> full-length CSV skipped
+
+=== Summary (overall test-set metrics) ===
+Hybrid_CNN_LSTM_Transformer    MAE=0.00496  RMSE=0.00785  R2=-0.151  DirAcc=0.517  ClfDirAcc=0.499
+ARIMA                          MAE=0.00471  RMSE=0.00736  R2=-0.005  DirAcc=0.506
+GARCH                          MAE=0.00470  RMSE=0.00735  R2=-0.001  DirAcc=0.538
+
+Machine-readable report written to results/evaluation_report.json
+Human-readable report written to report/report_seed_9\report.html  (charts also saved under report/report_seed_9/charts/)
+
+======================================================================
+SEED 36
+======================================================================
+
+=== Building multi-modal panel for XAU/USD (source=panel, n_days=100, interval=1h) ===
+[data] panel source actually used: real  (signal_strength=n/a)
+[data] train stride 3: train 43,374->14,458, val 9,306->3,102 (test untouched)
+train=14458  val=3102  test=9297  features=37
+[stationarity] ADF statistic=-1.0742  p-value=0.9333  -> non-stationary (unit root present, as Paper 1 also found)
+
+=== Fitting XGBoost expert (fused inside the Hybrid architecture) ===
+[features] XGBoost importance audit -- top: bb_pctb=0.034, ema_ratio=0.034, atr_pct=0.034, dollar_ret5=0.033, sig_none=0.032, env_dev20=0.032
+[features] lowest-importance (noise candidates): sig_sell=0.020, sig_buy=0.019, cpi_mom=0.000, cpi_yoy=0.000, days_since_cpi=0.000
+[garch-expert] loaded 26857 walk-forward GARCH forecasts (hash OK)
+
+=== Training Hybrid CNN-LSTM-Transformer (+ internally-fused XGBoost branch) ===
+C:\Sudhakar\Github\Forex_Price_Prediction\models\transformer_block.py:52: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+Hybrid model parameters: 4,401,767 (4.40M)
+[two-stage] Stage 1: quant-only, text bypassed, 18 epochs, full history (train=14458)
+epoch 01/18 | train_loss=-0.929580 | val_loss=-1.119636 | val_dir_acc=0.4934 | 237.5s
+epoch 02/18 | train_loss=-1.139814 | val_loss=-1.109821 | val_dir_acc=0.5176 | 259.2s
+epoch 03/18 | train_loss=-1.220467 | val_loss=-1.088170 | val_dir_acc=0.5107 | 286.1s
+epoch 04/18 | train_loss=-1.260189 | val_loss=-1.035000 | val_dir_acc=0.4871 | 291.3s
+epoch 05/18 | train_loss=-1.297263 | val_loss=-1.104198 | val_dir_acc=0.4887 | 286.0s
+epoch 06/18 | train_loss=-1.295314 | val_loss=-1.135546 | val_dir_acc=0.5192 | 286.3s
+epoch 07/18 | train_loss=-1.319647 | val_loss=-1.160302 | val_dir_acc=0.5178 | 282.0s
+epoch 08/18 | train_loss=-1.317084 | val_loss=-1.168080 | val_dir_acc=0.5121 | 286.5s
+epoch 09/18 | train_loss=-1.322439 | val_loss=-1.165496 | val_dir_acc=0.5125 | 286.7s
+epoch 10/18 | train_loss=-1.325249 | val_loss=-1.078018 | val_dir_acc=0.5153 | 288.7s
+epoch 11/18 | train_loss=-1.331187 | val_loss=-1.131550 | val_dir_acc=0.5092 | 289.3s
+epoch 12/18 | train_loss=-1.344877 | val_loss=-1.160131 | val_dir_acc=0.5101 | 296.5s
+epoch 13/18 | train_loss=-1.342830 | val_loss=-1.152393 | val_dir_acc=0.5027 | 287.4s
+epoch 14/18 | train_loss=-1.343455 | val_loss=-1.111635 | val_dir_acc=0.5201 | 284.7s
+epoch 15/18 | train_loss=-1.356669 | val_loss=-1.160729 | val_dir_acc=0.5119 | 290.1s
+epoch 16/18 | train_loss=-1.354558 | val_loss=-1.156732 | val_dir_acc=0.5034 | 287.1s
+epoch 17/18 | train_loss=-1.355407 | val_loss=-1.157524 | val_dir_acc=0.5111 | 290.0s
+epoch 18/18 | train_loss=-1.357207 | val_loss=-1.151841 | val_dir_acc=0.5142 | 295.2s
+[two-stage] Stage 2: text+fusion+decoder fine-tune, 12 epochs, news-dense subset (train=10561); froze 4,150,146 quant params, 251,621 trainable
+epoch 01/12 | train_loss=-1.352242 | val_loss=-1.150834 | val_dir_acc=0.5139 | 185.6s
+epoch 02/12 | train_loss=-1.348293 | val_loss=-1.138318 | val_dir_acc=0.5120 | 188.4s
+epoch 03/12 | train_loss=-1.354863 | val_loss=-1.141909 | val_dir_acc=0.5123 | 192.1s
+epoch 04/12 | train_loss=-1.359960 | val_loss=-1.155775 | val_dir_acc=0.5120 | 193.0s
+epoch 05/12 | train_loss=-1.353508 | val_loss=-1.140973 | val_dir_acc=0.5076 | 189.1s
+epoch 06/12 | train_loss=-1.354622 | val_loss=-1.141632 | val_dir_acc=0.5159 | 190.9s
+epoch 07/12 | train_loss=-1.359956 | val_loss=-1.147743 | val_dir_acc=0.5134 | 194.2s
+epoch 08/12 | train_loss=-1.365654 | val_loss=-1.141814 | val_dir_acc=0.5096 | 190.4s
+epoch 09/12 | train_loss=-1.363050 | val_loss=-1.143120 | val_dir_acc=0.5102 | 192.6s
+epoch 10/12 | train_loss=-1.360797 | val_loss=-1.152209 | val_dir_acc=0.5135 | 190.3s
+epoch 11/12 | train_loss=-1.367748 | val_loss=-1.145737 | val_dir_acc=0.5116 | 192.9s
+epoch 12/12 | train_loss=-1.361949 | val_loss=-1.152280 | val_dir_acc=0.5104 | 190.6s
+[adaptive] static-expert Hybrid DirAcc: 0.4979 (expert frozen at the train boundary)
+[wf-expert] reusing cached walk-forward predictions (9297 windows)
+[adaptive] walk-forward-expert Hybrid DirAcc: 0.5185 (delta +0.0205)
+[export] results/predictions_test_Hybrid_CNN_LSTM_Transformer_seed36.csv
+[hybrid] val-calibrated sign thresholds: test DirAcc 0.5240 (raw 0.5185, always-up base 0.5344, edge vs base -1.0pp)
+[hybrid] calibrated abstention: act on 41% of signals (tau from val q=0.75, mode=follow) -> test selective DirAcc 0.519 vs 0.518 unfiltered
+[backtest] conviction strategy (follow): -16.19% net (buy&hold +49.55%), Sharpe -0.53 (b&h 1.04), in market 51%, 2798 transactions @ 2.0bps
+[hybrid] learned average XGBoost trust weight on test set: 0.911 (0=ignored, 1=fully trusted)
+
+=== Evaluating ARIMA baseline (walk-forward, ≤1500 strided test origins) ===
+[baseline] ARIMA: reusing cached full walk-forward (1500 origins)
+[export] ARIMA: 1500 strided baseline origins (< 9297 test) -> full-length CSV skipped
+
+=== Evaluating GARCH baseline (AR(1)-GARCH(1,1), ≤1500 strided test origins) ===
+[baseline] GARCH: reusing cached full walk-forward (1500 origins)
+[export] GARCH: 1500 strided baseline origins (< 9297 test) -> full-length CSV skipped
+
+=== Summary (overall test-set metrics) ===
+Hybrid_CNN_LSTM_Transformer    MAE=0.00497  RMSE=0.00787  R2=-0.156  DirAcc=0.518  ClfDirAcc=0.512
+ARIMA                          MAE=0.00471  RMSE=0.00736  R2=-0.005  DirAcc=0.506
+GARCH                          MAE=0.00470  RMSE=0.00735  R2=-0.001  DirAcc=0.538
+
+Machine-readable report written to results/evaluation_report.json
+Human-readable report written to report/report_seed_36\report.html  (charts also saved under report/report_seed_36/charts/)
+
+======================================================================
+SEED 99
+======================================================================
+
+=== Building multi-modal panel for XAU/USD (source=panel, n_days=100, interval=1h) ===
+[data] panel source actually used: real  (signal_strength=n/a)
+[data] train stride 3: train 43,374->14,458, val 9,306->3,102 (test untouched)
+train=14458  val=3102  test=9297  features=37
+[stationarity] ADF statistic=-1.0742  p-value=0.9333  -> non-stationary (unit root present, as Paper 1 also found)
+
+=== Fitting XGBoost expert (fused inside the Hybrid architecture) ===
+[features] XGBoost importance audit -- top: bb_pctb=0.034, ema_ratio=0.034, atr_pct=0.034, dollar_ret5=0.033, sig_none=0.032, env_dev20=0.032
+[features] lowest-importance (noise candidates): sig_sell=0.020, sig_buy=0.019, cpi_mom=0.000, cpi_yoy=0.000, days_since_cpi=0.000
+[garch-expert] loaded 26857 walk-forward GARCH forecasts (hash OK)
+
+=== Training Hybrid CNN-LSTM-Transformer (+ internally-fused XGBoost branch) ===
+C:\Sudhakar\Github\Forex_Price_Prediction\models\transformer_block.py:52: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.encoder = nn.TransformerEncoder(encoder_layer, num_layers=n_layers)
+Hybrid model parameters: 4,401,767 (4.40M)
+[two-stage] Stage 1: quant-only, text bypassed, 18 epochs, full history (train=14458)
+epoch 01/18 | train_loss=-0.951823 | val_loss=-1.125921 | val_dir_acc=0.5215 | 234.0s
+epoch 02/18 | train_loss=-1.176326 | val_loss=-1.164835 | val_dir_acc=0.4818 | 253.6s
+epoch 03/18 | train_loss=-1.231378 | val_loss=-1.106584 | val_dir_acc=0.5244 | 267.8s
+epoch 04/18 | train_loss=-1.270469 | val_loss=-1.162460 | val_dir_acc=0.5083 | 275.7s
+epoch 05/18 | train_loss=-1.294705 | val_loss=-1.097485 | val_dir_acc=0.5148 | 277.5s
+epoch 06/18 | train_loss=-1.320344 | val_loss=-1.136419 | val_dir_acc=0.5103 | 276.8s
+epoch 07/18 | train_loss=-1.330262 | val_loss=-1.148718 | val_dir_acc=0.5141 | 274.9s
+epoch 08/18 | train_loss=-1.331544 | val_loss=-1.140484 | val_dir_acc=0.5051 | 273.4s
+epoch 09/18 | train_loss=-1.346788 | val_loss=-1.147432 | val_dir_acc=0.5146 | 275.3s
+epoch 10/18 | train_loss=-1.349503 | val_loss=-1.152187 | val_dir_acc=0.5089 | 273.6s
+epoch 11/18 | train_loss=-1.353316 | val_loss=-1.146488 | val_dir_acc=0.5104 | 276.3s
+Early stopping at epoch 11 (best val_dir_acc=0.5244)
+[two-stage] Stage 2: text+fusion+decoder fine-tune, 12 epochs, news-dense subset (train=10561); froze 4,150,146 quant params, 251,621 trainable
+epoch 01/12 | train_loss=-1.288084 | val_loss=-1.199633 | val_dir_acc=0.5154 | 177.3s
+epoch 02/12 | train_loss=-1.292865 | val_loss=-1.199223 | val_dir_acc=0.5160 | 180.2s
+epoch 03/12 | train_loss=-1.298862 | val_loss=-1.192359 | val_dir_acc=0.5154 | 181.9s
+epoch 04/12 | train_loss=-1.301367 | val_loss=-1.186533 | val_dir_acc=0.5113 | 186.0s
+epoch 05/12 | train_loss=-1.306053 | val_loss=-1.192512 | val_dir_acc=0.5146 | 176.0s
+epoch 06/12 | train_loss=-1.308741 | val_loss=-1.192078 | val_dir_acc=0.5133 | 185.6s
+epoch 07/12 | train_loss=-1.308100 | val_loss=-1.194137 | val_dir_acc=0.5164 | 201.6s
+epoch 08/12 | train_loss=-1.306308 | val_loss=-1.187521 | val_dir_acc=0.5153 | 215.9s
+epoch 09/12 | train_loss=-1.314587 | val_loss=-1.192551 | val_dir_acc=0.5127 | 214.0s
+epoch 10/12 | train_loss=-1.312762 | val_loss=-1.192978 | val_dir_acc=0.5146 | 182.8s
+epoch 11/12 | train_loss=-1.309018 | val_loss=-1.189557 | val_dir_acc=0.5154 | 178.0s
+epoch 12/12 | train_loss=-1.313844 | val_loss=-1.192738 | val_dir_acc=0.5103 | 180.7s
+[adaptive] static-expert Hybrid DirAcc: 0.4999 (expert frozen at the train boundary)
+[wf-expert] reusing cached walk-forward predictions (9297 windows)
+[adaptive] walk-forward-expert Hybrid DirAcc: 0.5178 (delta +0.0179)
+[export] results/predictions_test_Hybrid_CNN_LSTM_Transformer_seed99.csv
+[hybrid] val-calibrated sign thresholds: test DirAcc 0.5246 (raw 0.5178, always-up base 0.5344, edge vs base -1.0pp)
+[hybrid] calibrated abstention: act on 17% of signals (tau from val q=0.95, mode=follow) -> test selective DirAcc 0.500 vs 0.518 unfiltered
+[backtest] conviction strategy (follow): -0.51% net (buy&hold +49.55%), Sharpe -0.03 (b&h 1.04), in market 8%, 750 transactions @ 2.0bps
+[hybrid] learned average XGBoost trust weight on test set: 0.981 (0=ignored, 1=fully trusted)
+
+=== Evaluating ARIMA baseline (walk-forward, ≤1500 strided test origins) ===
+[baseline] ARIMA: reusing cached full walk-forward (1500 origins)
+[export] ARIMA: 1500 strided baseline origins (< 9297 test) -> full-length CSV skipped
+
+=== Evaluating GARCH baseline (AR(1)-GARCH(1,1), ≤1500 strided test origins) ===
+[baseline] GARCH: reusing cached full walk-forward (1500 origins)
+[export] GARCH: 1500 strided baseline origins (< 9297 test) -> full-length CSV skipped
+
+=== Summary (overall test-set metrics) ===
+Hybrid_CNN_LSTM_Transformer    MAE=0.00489  RMSE=0.00778  R2=-0.130  DirAcc=0.518  ClfDirAcc=0.482
+ARIMA                          MAE=0.00471  RMSE=0.00736  R2=-0.005  DirAcc=0.506
+GARCH                          MAE=0.00470  RMSE=0.00735  R2=-0.001  DirAcc=0.538
+
+Machine-readable report written to results/evaluation_report.json
+Human-readable report written to report/report_seed_99\report.html  (charts also saved under report/report_seed_99/charts/)
+
+======================================================================
+MULTI-SEED SUMMARY (3 seeds: [9, 36, 99])
+======================================================================
+Model                                            MAE                  RMSE   DirectionalAccuracy
+Hybrid_CNN_LSTM_Transformer      0.00494 +/-0.00004   0.00783 +/-0.00004   0.51782 +/-0.00053
+ARIMA                            0.00471 +/-0.00000   0.00736 +/-0.00000   0.50633 +/-0.00000
+GARCH                            0.00470 +/-0.00000   0.00735 +/-0.00000   0.53780 +/-0.00000
+
+Full multi-seed summary written to results/multi_seed_XAUUSD.json
+[ensemble] Hybrid seed-ensemble (3 seeds averaged): DirAcc=0.5183  @20%=0.5034  @10%=0.4981  MAE=0.00493
+[consensus] committee-vote filter: trade 3844/9297 bars (41%), DirAcc 0.520 vs 0.518 unfiltered; backtest -29.4% net (Sharpe -2.08)
+Roadmap extras (ensemble / event-window / TGC) written to results/roadmap_XAUUSD.json

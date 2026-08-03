@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Virtualenvs -- 1.5GB of recreatable packages; never commit these.
+# (.venv only stayed out of git by luck: venv writes its own .gitignore.)
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+.vscode/
+.claude/
+
+# Microsoft Office lock files (created while a document is open)
+~$*
+
+# MT5 broker credentials / connection overrides -- NEVER commit these.
+config/mt5.yaml
+config/mt5_*.yaml
+exports/mt5/
+
+# Benchmark reports under report/ are tracked deliberately: they are the
+# recorded evidence for each evaluation round.
+dashboard/__pycache__/
+results/run_multi_seed_error.log
+
+# Magnitude multi-seed: keep metrics JSON + meta, skip the 18MB/seed binaries
+exports/dashboard/*/magnitude/seed*/hybrid.pt
+exports/dashboard/*/magnitude/seed*/xgb.pkl
+exports/dashboard/*/magnitude/seed*/garch_expert_preds.npz
+
+# Conformal forecast-array cache (regenerable; delete to force pipeline rebuild)
+results/conformal_arrays_*.npz
+
+# Significance-test forecast-array cache (regenerable)
+results/significance_arrays_*.npz
+
+# HAR-RV magnitude checkpoint binaries (regenerable; metrics JSON kept)
+exports/dashboard/*/magnitude_harrv/seed*/hybrid.pt
+exports/dashboard/*/magnitude_harrv/seed*/xgb.pkl
+exports/dashboard/*/magnitude_harrv/seed*/garch_expert_preds.npz
