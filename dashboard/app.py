@@ -12,25 +12,6 @@ import os
 import sys
 import json
 
-# ==========================================
-# CRITICAL STREAMLIT PLATFORM BUG HOTFIX
-# ==========================================
-import starlette.middleware.gzip
-original_init = starlette.middleware.gzip.GZipResponder.__init__
-
-def patched_init(self, *args, **kwargs):
-    # Safely inject the missing required keyword argument
-    if 'thread_minimum_size' not in kwargs:
-        kwargs['thread_minimum_size'] = 1024 * 1024  # Default 1MB fallback
-    return original_init(self, *args, **kwargs)
-
-starlette.middleware.gzip.GZipResponder.__init__ = patched_init
-# ==========================================
-
-import streamlit as st
-# Your existing code continues below...
-
-
 # repo root on path + xgboost before torch (macOS/conda OpenMP)
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
@@ -40,7 +21,7 @@ import xgboost  # noqa: F401
 import numpy as np
 import pandas as pd
 import torch
-#import streamlit as st
+import streamlit as st
 import plotly.graph_objects as go
 
 from config import DATA_CFG
