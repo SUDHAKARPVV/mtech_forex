@@ -539,7 +539,7 @@ if __name__ == "__main__":
     parser.add_argument("--signal_strength", type=float, default=None,
                          help="Synthetic-mode only: strength of the injected causal sentiment/macro -> return signal. 0.0 = pure noise ablation.")
     parser.add_argument("--report_dir", type=str, default="report")
-    parser.add_argument("--interval", type=str, default="1d",
+    parser.add_argument("--interval", type=str, default="1h",
                          help="Bar interval for --source real: '1d' (daily, full history -- the default per the "
                               "improvement roadmap) or intraday like '5m' (capped at 60 trailing days by Yahoo).")
     parser.add_argument("--classification_weight", type=float, default=None,

@@ -77,7 +77,7 @@ PAIRS: "dict[str, PairConfig]" = {
         asset_pattern=r"\bgold\b|xau|bullion|precious metal|comex gold|gold price|spot gold",
         macro_pattern=_US_MACRO,
         # exclude foreign-FX (incl. euro) UNLESS the headline also names gold
-        foreign_pattern=_FX_MAJORS_EM + r"|\beuro\b|eur/usd|\becb\b",
+        foreign_pattern=_FX_MAJORS_EM + r"|\bgold\b|xau|bullion|\bprecious metal\b",
         gnews_lanes={
             "reuters": '(gold OR bullion OR "gold price") site:reuters.com',
             "general": '"gold price" OR "gold prices" OR "gold market" OR bullion OR "spot gold"',
@@ -93,7 +93,7 @@ PAIRS: "dict[str, PairConfig]" = {
         asset_pattern=(r"\bsilver\b|xag|silver price|spot silver|comex silver"
                        r"|silver futures|precious metal|bullion"),
         macro_pattern=_US_MACRO,
-        foreign_pattern=_FX_MAJORS_EM + r"|\beuro\b|eur/usd|\becb\b",
+        foreign_pattern=_FX_MAJORS_EM + r"|\bsilver\b|xag|bullion|\bprecious metal\b",
         gnews_lanes={
             "reuters": '(silver OR "silver price" OR "precious metals") site:reuters.com',
             "general": ('"silver price" OR "silver prices" OR "silver market" '
@@ -118,7 +118,7 @@ PAIRS: "dict[str, PairConfig]" = {
         macro_pattern=(_US_MACRO + r"|european central bank|\becb\b|\blagarde\b"
                        r"|\bdraghi\b|euro ?zone"),
         # exclude the OTHER currencies but NOT the euro itself
-        foreign_pattern=_FX_MAJORS_EM + r"|\bgold\b|xau|bullion|\bsilver\b|xag",
+        foreign_pattern=_FX_MAJORS_EM + r"|\beuro\b|eur/usd|\becb\b",
         gnews_lanes={
             "reuters": '("EUR/USD" OR euro OR ECB) site:reuters.com',
             "general": ('"EUR/USD" OR "euro dollar" OR "euro rises" OR "euro falls" '

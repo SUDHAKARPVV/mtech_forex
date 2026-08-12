@@ -1,186 +1,172 @@
 # Decoding Currency Dynamics — Hybrid CNN-LSTM-Transformer FX Forecasting
 
-A complete, runnable, tested implementation of the dissertation's Hybrid
-CNN-LSTM-Transformer architecture for multi-step XAU/USD forecasting, with
-multi-modal feature fusion (technical + macro + news sentiment), an
-integrated XGBoost expert, and regime-aware evaluation.
+M.Tech dissertation project (BITS Pilani WILP). A complete, runnable, tested
+system that forecasts **XAU/USD, XAG/USD and EUR/USD at hourly (H1)
+resolution**, fusing price, macroeconomic and FinBERT news-sentiment streams in
+a 4.4-million-parameter dual-tower network with trust-gated econometric
+experts — and, more importantly, an evaluation protocol under which every
+directional claim is measured against the base rate of the same bars.
 
-## Current architecture (this round)
+## Headline findings
 
-```
-                                    ┌──────────────── regime embed (realised vol, ATR) ──────┐
-                                    │                                                        ▼
- window (60×26) ─ fusion (26→64) ─ CNN ─(+ regime & sentiment embeds)─ Bi-LSTM ─ Transformer ─ pooled context ─┐
-      ▲                             ▲                                                                          │
-      │                             └── sentiment embed: 8 FinBERT rolling scores                              ├─ concat ─ RegimeAwareDecoder ─ deep_forecast ─┐
-      │                                 + 4 one-hot buy/sell/hold/none signal                                  │                                               │
- news feed ─ FinBERT/lexicon ─ score ─ EWM smoothing ─ signal                    raw macro+sentiment skip ─────┘                                               ├─ per-horizon convex blend ─ forecast
-      (data/sentiment.py:derive_trading_signals)                                                                                                               │
-                                                                                                                                                               │
- XGBoost expert (frozen, fit first) ─ k-step prediction ────────────────────────────────── xgb_trust gate (B,k) ──────────────────────────────────────────────┘
-```
+**Direction is not forecastable at H1.** Across three instruments, three seeds
+and roughly fifteen alternative framings, no configuration exceeded its own
+always-up base rate.
 
-Three design decisions define this round:
+| Instrument | Hybrid | GARCH | ARIMA | Base rate | Edge |
+|---|---|---|---|---|---|
+| Gold (XAU/USD) | 0.5178 | 0.5378 | 0.5063 | 0.5344 | **−1.7 pp** |
+| Silver (XAG/USD) | 0.5145 | 0.5237 | 0.4925 | 0.5354 | **−2.1 pp** |
+| Euro (EUR/USD) | 0.4984 | 0.5044 | 0.4875 | 0.5037 | **−0.5 pp** |
 
-1. **Sentiment signal → CNN.** The news feed is scored by FinBERT (with a
-   deterministic lexicon fallback when transformers/weights are
-   unavailable), smoothed with an exponentially-weighted mean, and
-   discretised into a **buy / sell / hold / none** trading signal
-   (`data/sentiment.py:derive_trading_signals`; `none` = no headlines at
-   all, which is information distinct from "neutral news"). The signal
-   enters the model twice: as 4 one-hot per-timestep features inside the
-   26-feature input window, and — together with the 8 continuous rolling
-   sentiment scores — as a learned conditioning embedding added to the
-   CNN's output at every timestep (the same early-conditioning mechanism
-   as the volatility-regime embedding).
+Read the **edge**, not the accuracy. Directional accuracy is uninterpretable
+without the unconditional base rate of the test window: if an instrument rises
+in 53.44% of bars, a rule that ignores its inputs entirely and always predicts
+"up" scores 0.5344. Seed dispersion is 0.0005–0.0018, one to two orders of
+magnitude smaller than the gap to the base rate — this is a stable finding, not
+a bad training run.
 
-2. **XGBoost is an internal expert, not a baseline.** The tree ensemble is
-   fit first, frozen, and its k-step prediction is blended inside
-   `HybridCNNLSTMTransformer.forward` via a learned **per-horizon** trust
-   gate: `forecast = trust ⊙ xgb_pred + (1 − trust) ⊙ deep_forecast`.
-   A deep-supervision loss term holds the deep pathway to the full
-   regression objective on its own output, so it is trained as a complete
-   forecaster and cannot collapse to zero. Because XGBoost is a component
-   of the proposed model, it does **not** appear in the baseline
-   comparison (the dissertation's Section 1.3 baseline set is Vanilla
-   LSTM, Simplified TFT, ARIMA, and Random Walk with Drift).
+**Move magnitude is forecastable.** The same model, the same features, the same
+bars and the same protocol beat both volatility baselines on rank skill and
+large-move classification, on all three instruments and every seed.
 
-3. **Checkpoint selection by validation directional accuracy.** All deep
-   models (Hybrid and baselines alike) early-stop and select their best
-   epoch on validation *directional accuracy* (val loss as tiebreak), so
-   the selection criterion agrees with the headline evaluation metric.
-
-## Results — 5,000-candle live benchmark (and the 0.85 question)
-
-`python run_multi_seed.py --n_days 5000`: 5,000 real XAU/USD 5-minute
-candles (Yahoo Finance), 528 real headlines (477 from GDELT's 60-day
-archive + RSS) scored by **real FinBERT**, 3,440/749/739
-train/val/test windows, 3 training seeds. Intermediate artifacts for
-every stage are in `exports/` (prices, scored headlines, per-bar
-sentiment features, per-model test predictions).
-
-| Model | DirAcc (mean ± std) | MAE |
+| Instrument | Spearman: Hybrid / ATR% / GARCH-σ | Large-move acc.: Hybrid vs base |
 |---|---|---|
-| ARIMA | 0.528 | **0.0015** |
-| **Hybrid CNN-LSTM-Transformer** | **0.507 ± 0.015** | 0.0020 |
-| Simplified TFT | 0.498 ± 0.009 | 0.0040 |
-| Vanilla LSTM | 0.496 ± 0.009 | 0.0022 |
-| Random Walk with Drift | 0.490 | 0.0016 |
+| Gold | 0.3288 / 0.3086 / 0.3043 | 0.5517 vs 0.5046 |
+| Silver | 0.4178 / 0.3771 / 0.3463 | 0.5520 vs 0.5119 |
+| Euro | 0.2316 / 0.0894 / 0.1453 | 0.5709 vs 0.4969 |
 
-**The honest headline: directional accuracy > 0.85 is not achievable on
-this task, by any model, without data leakage.** At 739 test windows the
-sampling noise that produced 0.55–0.63 readings on earlier ~130-window
-test sets collapses, and every architecture lands in the 0.49–0.53 band —
-exactly where the efficient-market/martingale literature puts short-horizon
-FX predictability. Published papers reporting 85–95% directional accuracy
-on financial returns almost invariably predict smoothed targets, leak
-overlapping windows across the train/test boundary, or score price-*level*
-tracking (where a random walk scores ~99% R² trivially). Any result near
-0.85 in this repo should be treated as a bug to find, not a success to
-report.
+Significance is reported honestly: on gold all four bootstrap intervals contain
+zero, while silver's and euro's eight all exclude it. Diebold–Mariano and the
+Hansen MCS operate on squared-error loss — not the quantity claimed — and
+separate nothing anywhere; all DM statistics favour the hybrid but none reach
+significance, and that is reported rather than omitted.
 
-**Where the Hybrid does earn something real — selective accuracy.** Using
-|forecast| as conviction and acting only on the loudest signals
-(`DirAcc@coverage`, utils/metrics.py):
+**Calibrated uncertainty is the most deployable result.** The Gaussian head is
+badly over-confident; adaptive conformal inference restores nominal coverage
+where split conformal fails.
 
-| Hybrid, per seed | all signals | top 20% | top 10% | top 5% |
-|---|---|---|---|---|
-| seed 9 | 0.512 | 0.522 | 0.512 | 0.493 |
-| seed 36 | 0.522 | **0.581** | **0.658** | **0.753** |
-| seed 99 | 0.486 | 0.562 | 0.556 | 0.575 |
-
-On 2 of 3 seeds, conviction-filtering lifts the Hybrid to 0.56–0.75 —
-no baseline shows this pattern (ARIMA *degrades* under the same filter,
-0.53 → 0.35–0.46). This is the industry-standard way such models are
-consumed: not "predict every bar" but "act when confident". Accuracy at
-the longest horizon (cumulative 10-step return) also runs above the
-1-step figure (≈0.53 vs ≈0.50 on the good seeds), consistent with signal
-accumulating over horizons while single-bar noise dominates h=1.
-
-## Earlier round — 1,000-candle live benchmark (superseded)
-
-`python run_multi_seed.py` (defaults: `--source real`, seeds 9/36/99,
-30 epochs). 1,000 real candles + ~50 real headlines from
-FXStreet/Investing.com per fetch; seeds vary model initialisation and
-training order (the market data is whatever is live at run time).
-
-| Model | Seed 9 | Seed 36 | Seed 99 | Mean ± std DirAcc |
-|---|---|---|---|---|
-| **Hybrid CNN-LSTM-Transformer** | **0.559** | **0.579** | 0.543 | **0.560 ± 0.015** |
-| Random Walk with Drift | 0.550 | 0.550 | 0.550 | 0.550 ± 0.000 |
-| ARIMA | 0.530 | 0.530 | 0.530 | 0.530 ± 0.000 |
-| Vanilla LSTM | 0.488 | 0.544 | 0.512 | 0.515 ± 0.023 |
-| Simplified TFT | 0.512 | 0.470 | 0.460 | 0.480 ± 0.022 |
-
-The Hybrid has the best mean directional accuracy and beats every
-dissertation baseline; against the strongest (Random Walk with Drift,
-deterministic) it wins on 2 of 3 seeds. The learned XGBoost trust averaged
-0.93–0.98, i.e. the blend leans on the tree expert and the deep pathway
-supplies the directional edge on top.
-
-**Honest caveats:** ARIMA and RWD have lower MAE/RMSE (they minimise
-magnitude error on near-random-walk 5-minute returns almost by
-construction); the Hybrid's advantage is directional, which is the metric
-that matters for a trading signal. 1,000 candles (~3.5 trading days) is a
-small evaluation window, the macro stream is still synthetic (no live
-macro feed), and ~50 headlines means the sentiment stream is sparse —
-longer histories would tighten all of these numbers.
-
-## How the fusion design was reached (3 recorded iterations)
-
-Each iteration was benchmarked on the controlled synthetic panel
-(3 seeds × 2,500 days, signal-linked generator) before the live run; the
-full evidence trail is in the git history (`git log --oneline`).
-
-| Iteration | Design | 3-seed outcome | Lesson |
+| Nominal | Gaussian | Split conformal | ACI |
 |---|---|---|---|
-| 1 | XGBoost prediction as a context **embedding** only | Hybrid 0.567 — *below* standalone XGBoost (0.606) | Information-dense input → instant overfitting; regularising it away blunts the signal |
-| 2 | **Additive residual** on a zero-initialised decoder (`trust·xgb + correction`) | Hybrid 0.586/0.587 — glued to XGBoost, trust ≈ 1.0 | Any correction big enough to flip signs is punished by MSE first; the anchor swallows the model |
-| 3 | **Convex two-expert blend + deep supervision + per-horizon gate** (current) | Hybrid 0.587 vs XGBoost 0.587 on synthetic; **top model on live data** | The gate must arbitrate between two *complete* forecasters; deep supervision prevents collapse |
+| 80% | 63.3% | 61.9% | **79.9%** |
+| 90% | 72.9% | 75.8% | **90.0%** |
+| 95% | 79.0% | 84.5% | **95.0%** |
 
-Supporting changes along the way: checkpoint selection by validation
-DirAcc; directional loss weight 0.15 → 0.35; deep-supervision weight 0.5;
-train-only normalisation guard for near-constant one-hot columns.
+## Data
 
-## Environment notes (macOS / conda)
+Three instruments with deliberately different liquidity, volatility and news
+profiles, so a conclusion holding across all three is not an artefact of one
+series. Each has an entirely independent pipeline, news archive and checkpoint.
 
-Two hard crashes (segfaults, not catchable exceptions) were found and
-guarded on macOS + miniconda:
+| Instrument | Bars | Headlines | Sentiment coverage | Test origins |
+|---|---|---|---|---|
+| Gold (XAU/USD) | 62,049 | 22,833 | 99.9% | 9,297 |
+| Silver (XAG/USD) | 62,328 | 11,413 | 99.5% | 9,339 |
+| Euro (EUR/USD) | 65,587 | 10,605 | 98.0% | 9,828 |
 
-- **xgboost × torch OpenMP clash** — loading torch's bundled libomp first
-  segfaults XGBoost's first `fit()`. Entry points import `xgboost`
-  **before** `torch` (see the note at the top of `main.py`).
-- **transformers × torch binary mismatch** — `from transformers import
-  pipeline` can segfault outright (observed with transformers 4.55 +
-  torch 2.9). `data/sentiment.py` probes the import in a throwaway
-  subprocess and falls back to the lexicon scorer if the probe dies.
-  `pip install -U transformers` should restore real FinBERT scoring.
+- **Price** — hourly OHLCV, Jan 2016 – Jul 2026. A curated MetaTrader 5 CSV
+  export supplies the history (genuine H1 back to 2010); a read-only live
+  attachment supplies fresh bars for the dashboard, with Yahoo Finance as a
+  live fallback and the export as a last resort.
+- **News** — 44,851 headlines from GDELT DOC 2.0, Google News and public RSS,
+  de-duplicated, filtered for instrument relevance, scored with FinBERT.
+  Polarity × confidence is cached per headline, so historical news is never
+  re-scored and a rerun is reproducible.
+- **Macro** — real series: `^IRX`, `^TNX` and DXY via Yahoo, CPI via the US
+  Bureau of Labor Statistics API, transformed to stationarity and lagged one
+  day before they may touch a bar.
 
-## Project structure
+**37 features per bar** = 18 technical + 6 macro + 13 sentiment, over a
+T = 60 bar lookback, predicting k = 10 steps ahead. Every feature is a
+stationary transform; the ADF test on the close series confirms a unit root.
+
+## Architecture
+
+Dual-tower, 4,401,767 trainable parameters. Price and news are different kinds
+of signal — one dense and numeric, the other sparse and semantic — so they stay
+in separate towers that meet through an attention operator able to decline the
+second stream entirely.
 
 ```
-forex/
-├── config.py                 # architecture / training hyperparameters
-├── main.py                   # end-to-end entry point (train + evaluate + report)
-├── run_multi_seed.py         # multi-seed comparison (defaults: live data, seeds 9/36/99)
-├── generate_report.py        # regenerate the HTML report from a JSON file
+Price + macro (B,60,24) ──► Dilated causal CNN (d=1,2,4, RF 15 bars) ──┐
+                                                                       ├─► Gated cross-attention (4 heads + presence gate)
+FinBERT sentiment (B,60,13) ► Sentiment GRU (13→128) ──────────────────┘
+                                        │
+                                        ▼
+              Causal Transformer (4 layers, 8 heads, d_model 256, FFN 1024)
+                                        │
+                        Bi-LSTM ‖ Bi-GRU, blended by a learned gate λ
+                                        │
+                            Attention pooling ──► (B, 256)
+                                        │
+        ┌───────────────────────────────┴──────────── deep μ ──────────┐
+        ▼                                                              ▼
+  μ, σ per horizon  ◄── nested convex blend ◄── trust gates σ(W·regime) ◄── GARCH + XGBoost
+     (Gaussian NLL)                                                        (walk-forward experts)
+```
+
+The Transformer holds 3,159,040 parameters (71.8%) and 77.5% of the compute;
+analytical cost is 253.2 M MAC ≈ 0.51 GFLOP per sample.
+
+Design notes worth knowing:
+
+1. **Presence-gated fusion.** `presence = sigmoid(text_gate(text))` is computed
+   from the text itself, so when a window carries no headlines the gate closes
+   and the fused representation reduces to the price tower. Combined with 40%
+   modality masking during training, the network treats news as a
+   sometimes-absent shock channel rather than an always-on feature.
+2. **XGBoost and GARCH are internal experts, not baselines.** Both are fitted
+   first, frozen, and blended inside `forward()` by regime-driven per-horizon
+   trust gates. A deep-supervision term keeps the deep pathway a complete
+   forecaster so it cannot collapse to zero.
+3. **Two-stage freeze-and-tune.** Stage 1 trains the quantitative tower
+   text-free over the full history; stage 2 freezes it and fine-tunes the text
+   tower, fusion node and decoder on the news-dense period from 2018 at
+   one-tenth the learning rate — so seventeen news-sparse years cannot dilute
+   the sentiment pathway.
+
+## Evaluation protocol
+
+The protocol *is* the contribution. Two controls:
+
+- **Global base-rate control.** Every directional figure is reported as an
+  edge — accuracy minus the always-up base rate of the same bars — never raw.
+- **Subset base-rate control.** If a rule trades only a selected subset, the
+  base rate is recomputed on that subset. See the retraction above.
+
+Leakage is prevented structurally, not checked afterwards: macro shifted
+forward one day; headlines aligned on publication timestamp in a strictly
+trailing window; normalisation statistics fitted on the train split alone;
+left-only convolutional padding and a causal Transformer mask; classical
+baselines re-fitted walk-forward; chronological 70/15/15 split.
+
+## Repository structure
+
+```
+├── config.py                      # all hyper-parameters, as three dataclasses
+├── main.py                        # end-to-end: build → split → experts → train → evaluate
+├── generate_report.py             # regenerate the HTML report from a JSON file
 ├── data/
-│   ├── sentiment.py          # FinBERT wrapper + lexicon fallback + buy/sell/hold/none signal
-│   ├── dataset.py            # 26-feature fusion panel, sliding windows, train-only normalisation
-│   ├── real_data_feed.py     # live Yahoo Finance candles + FXStreet/Investing.com headlines
-│   ├── technical_indicators.py, synthetic_data.py
+│   ├── dataset.py                 # 37-feature panel, windows, train-only normalisation
+│   ├── real_data_feed.py          # price/news/macro acquisition and alignment
+│   ├── mt5_feed.py                # MetaTrader 5 live API + CSV export loader
+│   ├── sentiment.py               # FinBERT scoring, caching, per-bar features
+│   ├── technical_indicators.py, pairs.py, synthetic_data.py
 ├── models/
-│   ├── hybrid_model.py       # full pipeline: fusion → CNN (+regime & sentiment embeds)
-│   │                         #   → Bi-LSTM → Transformer → two-expert per-horizon blend
-│   ├── feature_fusion.py, cnn_layer.py, lstm_layer.py,
-│   ├── transformer_block.py, regime_aware.py
-├── baselines/                # vanilla LSTM, simplified TFT, ARIMA, random walk, prophet
-│   └── xgboost_baseline.py   # the INTERNAL XGBoost expert + dataset augmentation
-├── training/                 # loop (DirAcc checkpoint selection, deep supervision), evaluation
-├── utils/                    # metrics, regime detector, price reconstruction, HTML report
-├── tests/test_pipeline.py    # 29 integration tests covering every module
-├── notebook/                 # exploratory notebook
-└── report/                   # benchmark reports (report_seed_<seed>/, tracked in git)
+│   └── hybrid_model.py            # the dual-tower network and its forward pass
+├── baselines/                     # ARIMA, GARCH, XGBoost, TFT, vanilla LSTM, random walk
+├── training/                      # loop, losses, metric summarisation
+├── analysis/                      # significance, conformal, TGC, ablation scans
+│   ├── significance_magnitude_gold.py   # block bootstrap, Diebold–Mariano, Hansen MCS
+│   ├── conformal_intervals_gold.py      # Gaussian vs split conformal vs ACI
+│   └── tgc_h1.py                        # the subset base-rate demonstration
+├── scripts/
+│   ├── run_multi_seed.py          # the benchmark: seeds 9/36/99 per pair
+│   └── build_news_archive.py, build_dataset.py, generate_final_report.py
+├── dashboard/app.py               # 5-page Streamlit app incl. live out-of-sample inference
+├── tests/test_pipeline.py         # 29 integration tests
+├── results/                       # metrics and summary JSONs (the run OUTPUTS)
+└── exports/                       # feature panels, archives, checkpoints (the DATA store)
 ```
 
 ## Setup & run
@@ -189,24 +175,52 @@ forex/
 pip install -r requirements.txt
 
 python tests/test_pipeline.py          # 29/29 should pass
-
 python main.py --quick                 # fast smoke test (synthetic)
 python main.py --source real           # single full run on live data
-python run_multi_seed.py               # the benchmark: live data, seeds 9/36/99
+python scripts/run_multi_seed.py       # the benchmark: seeds 9/36/99
+streamlit run dashboard/app.py         # the dashboard
 ```
 
-Each run writes `evaluation_report.json`, `report/.../report.html`,
-charts (including predicted-vs-actual price levels), and a `SUMMARY.md`.
+`streamlit` and `starlette` are pinned **together** in `requirements.txt`:
+starlette 1.4.0 made `thread_minimum_size` a required argument of
+`GZipResponder.__init__` that no streamlit release passes, which takes the
+server down with a 500 on every request. `streamlit>=1.61.1` carries the
+upstream cap. Do not bump one without the other.
 
-## Known limitations / next steps
+## Dashboard
 
-- Live evaluation window is short (1,000 × 5-minute candles per fetch);
-  persisting fetched candles across runs would grow the history.
-- Real macro data (FRED or similar) isn't wired in; the macro stream is
-  synthetic even in `--source real` mode.
-- FinBERT runs only where a compatible transformers install is available
-  (see Environment notes); otherwise the deterministic lexicon scorer is
-  used — same interface, weaker scores.
-- Prophet baseline requires its heavy Stan toolchain and is optional.
-- The auxiliary direction-classification head remains disabled by default
-  (overfits on ~1,000-window datasets).
+| Artifact | Where |
+|---|---|
+| Live dashboard | https://forex-price-prediction.streamlit.app |
+
+
+## Known limitations
+
+- One test window per instrument. Gold's is a strong bull market, which raises
+  its base rate and makes the directional result window-specific in degree,
+  though not in direction.
+- Three seeds separate a real effect from initialisation noise but are not a
+  substitute for a full walk-forward retraining study.
+- No transaction costs, spread or slippage are modelled. This weakens no result
+  here — none is a trading claim — but no figure should be read as an
+  achievable return.
+- The conformal layer is fitted for gold only; its transfer is demonstrated
+  rather than assumed.
+- Sentiment is headline-level polarity only, so the modality null cannot
+  separate a property of markets from a limitation of headline granularity.
+- No order-flow or depth-of-market data was available — no consolidated book
+  exists for spot metals and FX — so the directional conclusion is a statement
+  about *this* feature set, not about all possible feature sets.
+
+## Environment notes
+
+- **xgboost × torch OpenMP clash** (macOS + miniconda). Loading torch's bundled
+  libomp first segfaults XGBoost's first `fit()`. Entry points import `xgboost`
+  **before** `torch` — see the note at the top of `main.py`.
+- **transformers × torch binary mismatch.** `from transformers import pipeline`
+  can segfault outright. `data/sentiment.py` probes the import in a throwaway
+  subprocess and falls back to a deterministic lexicon scorer if the probe dies.
+- **MetaTrader 5 is Windows-only** and is deliberately *not* in
+  `requirements.txt`, so the package cannot break a Linux deploy. The price
+  chain degrades to Yahoo Finance and then to the curated export, and the
+  dashboard states which source served every forecast.
